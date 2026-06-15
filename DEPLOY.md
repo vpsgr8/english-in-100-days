@@ -1,36 +1,38 @@
 # Deploy for @vpsgr8
 
-## Your live URLs (after push + Pages enabled)
+## Your live URLs
 
 | Page | URL |
 |------|-----|
 | **App** | https://vpsgr8.github.io/english-in-100-days/ |
 | **School Admin** | https://vpsgr8.github.io/english-in-100-days/admin.html |
 
+> **Important:** GitHub Pages must use the **`gh-pages`** branch (not `main`).
+
 ---
 
-## One-time setup
+## Fix "README showing instead of app"
 
-### 1. Create repo on GitHub
-https://github.com/new → name: `english-in-100-days` → Public → Create
+1. Repo → **Settings** → **Pages**
+2. **Build and deployment** → Source: **Deploy from a branch**
+3. Branch: **`gh-pages`** → folder **`/ (root)`** → Save
+4. Wait 2–3 minutes, then open: https://vpsgr8.github.io/english-in-100-days/
 
-### 2. Push (run in project folder)
+Every `git push` to `main` auto-updates the `gh-pages` branch via GitHub Actions.
+
+---
+
+## Push updates
 
 ```bash
 cd C:\Users\vis_p\english-in-100-days
 git add .
-git commit -m "Launch English in 100 Days MVP"
-git branch -M main
-git remote add origin https://github.com/vpsgr8/english-in-100-days.git
-git push -u origin main
+git commit -m "Your update"
+git push
 ```
-
-### 3. Enable GitHub Pages
-Repo → **Settings** → **Pages** → Source: **GitHub Actions**
-
-### 4. Firebase (optional)
-Add authorized domain: `vpsgr8.github.io`
 
 ---
 
-Site goes live in ~2 minutes after push.
+## Firebase (optional)
+
+Add authorized domain: `vpsgr8.github.io`
