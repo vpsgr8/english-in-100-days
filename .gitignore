@@ -1,0 +1,17 @@
+# Secrets — never commit
+.env
+# Generated locally by npm run build — optional commit for GitHub Pages without secrets
+# mvp/config.local.js
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Firebase
+firebase/functions/node_modules/
+firebase-debug.log
+*.log
+serviceAccountKey.json
+
+# Node
+node_modules/

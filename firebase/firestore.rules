@@ -1,0 +1,58 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+    }
+
+    match /lessons/{dayNumber} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    match /userProgress/{userId}/days/{dayNumber} {
+      allow read, write: if isOwner(userId);
+    }
+
+    match /speakingSessions/{sessionId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    match /chatMessages/{messageId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow create: if isSignedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if false;
+    }
+
+    match /subscriptions/{subscriptionId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow write: if false;
+    }
+
+    match /wordOfTheDay/{date} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    match /schools/{schoolId} {
+      allow read: if isSignedIn();
+      allow write: if false;
+    }
+
+    match /certificates/{certId} {
+      allow read: if isSignedIn() && resource.data.userId == request.auth.uid;
+      allow write: if false;
+    }
+  }
+}

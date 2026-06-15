@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script>
+    // GitHub Pages SPA fallback — serve index.html for unknown paths
+    sessionStorage.setItem('gh_redirect', location.pathname + location.search + location.hash);
+    location.replace(document.querySelector('base')?.href || 'index.html');
+  </script>
+</head>
+<body>Redirecting…</body>
+</html>

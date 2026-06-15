@@ -1,0 +1,41 @@
+{
+  "name": "English in 100 Days",
+  "short_name": "English100",
+  "description": "Learn Spoken English in 100 Days for Indians — 5 minutes a day",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#2563eb",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "lang": "en-IN",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "icons/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Today's Lesson",
+      "short_name": "Lesson",
+      "url": "./index.html?action=lesson",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "any" }]
+    },
+    {
+      "name": "English Buddy",
+      "short_name": "Buddy",
+      "url": "./index.html?action=buddy",
+      "icons": [{ "src": "icons/icon.svg", "sizes": "any" }]
+    }
+  ]
+}

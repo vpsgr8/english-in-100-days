@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English in 100 Days — Learn Spoken English for Indians</title>
+  <meta name="description" content="Learn spoken English in 100 days with just 5 minutes daily. Made for Indian learners. Hindi to English, AI speaking practice, job interview prep. Free to start.">
+  <meta name="keywords" content="learn english, spoken english, english for indians, hindi to english, english speaking app india">
+  <meta name="theme-color" content="#2563eb">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg">
+  <meta property="og:title" content="English in 100 Days — Learn Spoken English">
+  <meta property="og:description" content="5 min/day. 100 days. Listen → Speak → Understand. Made for India. 🇮🇳">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://vpsgr8.github.io/english-in-100-days/">
+  <meta property="og:site_name" content="English in 100 Days">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="English in 100 Days">
+  <meta name="twitter:description" content="Learn spoken English in 100 days — free to start, ₹99/month premium.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Inter', 'sans-serif'], hindi: ['Noto Sans Devanagari', 'sans-serif'] },
+          colors: {
+            brand: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a' },
+            accent: { 400:'#fbbf24',500:'#f59e0b',600:'#d97706' }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .hindi { font-family: 'Noto Sans Devanagari', sans-serif; }
+    .view { display: none; }
+    .view.active { display: block; }
+    .score-ring { background: conic-gradient(#2563eb var(--pct), #e5e7eb 0); }
+    @keyframes pulse-mic { 0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.4)} 50%{box-shadow:0 0 0 12px rgba(239,68,68,0)} }
+    .mic-active { animation: pulse-mic 1.5s infinite; }
+    .card-hover { transition: transform .2s, box-shadow .2s; }
+    .card-hover:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -8px rgba(37,99,235,.15); }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen">
+
+<!-- NAV -->
+<nav id="mainNav" class="bg-white border-b border-slate-200 sticky top-0 z-50 hidden">
+  <div class="max-w-5xl mx-auto px-4 py-3 flex items-center justify-between">
+    <button onclick="showView('dashboard')" class="flex items-center gap-2 font-bold text-brand-700">
+      <span class="text-2xl">🇬🇧</span>
+      <span>English in <span class="text-accent-500">100</span> Days</span>
+    </button>
+    <div class="flex items-center gap-3">
+      <span id="navStreak" class="text-sm bg-orange-100 text-orange-700 px-2 py-1 rounded-full hidden">🔥 0</span>
+      <button onclick="showView('dashboard')" class="text-sm text-slate-600 hover:text-brand-600">Dashboard</button>
+      <button onclick="logout()" class="text-sm text-slate-500 hover:text-red-500">Logout</button>
+    </div>
+  </div>
+</nav>
+
+<!-- LANDING -->
+<div id="view-landing" class="view active">
+  <header class="bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 text-white">
+    <div class="max-w-5xl mx-auto px-4 py-16 text-center">
+      <p class="text-brand-200 text-sm font-medium mb-3">🇮🇳 Made for Indian Learners</p>
+      <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Learn Spoken English<br>in <span class="text-accent-400">100 Days</span></h1>
+      <p class="text-brand-100 text-lg max-w-2xl mx-auto mb-8">Listen → Speak → Understand → Grammar. Just 5 minutes a day. No grammar-first boredom.</p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <button onclick="showView('auth')" class="bg-accent-500 hover:bg-accent-600 text-white font-semibold px-8 py-3 rounded-xl shadow-lg">Start Free — Day 1</button>
+        <button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})" class="bg-white/10 hover:bg-white/20 border border-white/30 px-8 py-3 rounded-xl">See Features</button>
+      </div>
+      <div class="flex justify-center gap-8 mt-10 text-sm text-brand-200">
+        <div><span class="block text-2xl font-bold text-white">5 min</span>Daily Lesson</div>
+        <div><span class="block text-2xl font-bold text-white">100</span>Days Program</div>
+        <div><span class="block text-2xl font-bold text-white">₹99</span>/month Premium</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="features" class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-center mb-10">Why We're Different</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl shadow-sm border card-hover">
+        <div class="text-3xl mb-3">🎧</div>
+        <h3 class="font-semibold mb-2">Listen First</h3>
+        <p class="text-slate-600 text-sm">Learn like a child — hear words and sentences before grammar rules.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border card-hover">
+        <div class="text-3xl mb-3">🗣️</div>
+        <h3 class="font-semibold mb-2">AI Speaking Practice</h3>
+        <p class="text-slate-600 text-sm">Get scores for pronunciation, fluency, and confidence instantly.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border card-hover">
+        <div class="text-3xl mb-3">🇮🇳</div>
+        <h3 class="font-semibold mb-2">English Buddy</h3>
+        <p class="text-slate-600 text-sm hindi">हिंदी में बोलो, अंग्रेजी सीखो — speak in Hindi, learn in English.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border card-hover">
+        <div class="text-3xl mb-3">🍽️</div>
+        <h3 class="font-semibold mb-2">Real-Life Situations</h3>
+        <p class="text-slate-600 text-sm">Restaurant, interviews, airport, hotel — practice what you actually need.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border card-hover">
+        <div class="text-3xl mb-3">💼</div>
+        <h3 class="font-semibold mb-2">English for Jobs</h3>
+        <p class="text-slate-600 text-sm">Interview practice, corporate English, email writing for Indian job seekers.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl shadow-sm border card-hover">
+        <div class="text-3xl mb-3">🎮</div>
+        <h3 class="font-semibold mb-2">Fun Games</h3>
+        <p class="text-slate-600 text-sm">Word puzzles, listening challenges — learning that doesn't feel like homework.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-brand-50 py-16">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold mb-6">Simple Pricing</h2>
+      <div class="grid sm:grid-cols-2 gap-6">
+        <div class="bg-white p-6 rounded-2xl border-2 border-slate-200">
+          <h3 class="font-bold text-lg">Free</h3>
+          <p class="text-3xl font-extrabold my-2">₹0</p>
+          <ul class="text-sm text-slate-600 text-left space-y-2 mt-4">
+            <li>✓ Daily 5-min lesson</li>
+            <li>✓ Word of the day</li>
+            <li>✓ Basic AI chat</li>
+            <li>✓ 3 speaking sessions/day</li>
+          </ul>
+        </div>
+        <div class="bg-white p-6 rounded-2xl border-2 border-brand-500 relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
+          <h3 class="font-bold text-lg text-brand-700">Premium</h3>
+          <p class="text-3xl font-extrabold my-2">₹99<span class="text-base font-normal text-slate-500">/mo</span></p>
+          <ul class="text-sm text-slate-600 text-left space-y-2 mt-4">
+            <li>✓ Unlimited AI speaking</li>
+            <li>✓ Interview practice</li>
+            <li>✓ All scenarios</li>
+            <li>✓ Certificates & analytics</li>
+          </ul>
+        </div>
+      </div>
+      <button onclick="showView('auth')" class="mt-8 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-xl">Get Started Free</button>
+    </div>
+  </section>
+
+  <!-- Social Proof -->
+  <section class="py-12 border-t border-b bg-white">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div><div class="text-3xl font-extrabold text-brand-600">100</div><div class="text-sm text-slate-500">Day Program</div></div>
+        <div><div class="text-3xl font-extrabold text-brand-600">5 min</div><div class="text-sm text-slate-500">Daily Commitment</div></div>
+        <div><div class="text-3xl font-extrabold text-brand-600">4</div><div class="text-sm text-slate-500">Indian Languages</div></div>
+        <div><div class="text-3xl font-extrabold text-brand-600">₹99</div><div class="text-sm text-slate-500">Premium / Month</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="max-w-5xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-center mb-10">What Learners Say</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-2xl border shadow-sm">
+        <p class="text-slate-600 text-sm italic">"मैं इंटरव्यू में अंग्रेजी बोलने से डरती थी। 30 दिन बाद मैं confidently introduce कर सकती हूँ!"</p>
+        <p class="mt-4 font-semibold text-sm">Priya S. <span class="text-slate-400 font-normal">— Patna, Job Seeker</span></p>
+        <div class="text-accent-500 text-sm mt-1">★★★★★</div>
+      </div>
+      <div class="bg-white p-6 rounded-2xl border shadow-sm">
+        <p class="text-slate-600 text-sm italic">"English Buddy is amazing. I speak in Hindi and learn the English sentence instantly."</p>
+        <p class="mt-4 font-semibold text-sm">Rahul V. <span class="text-slate-400 font-normal">— Chennai, Student</span></p>
+        <div class="text-accent-500 text-sm mt-1">★★★★★</div>
+      </div>
+      <div class="bg-white p-6 rounded-2xl border shadow-sm">
+        <p class="text-slate-600 text-sm italic">"Just 5 minutes a day — perfect for housewives. Ab main market mein English mein baat karti hoon."</p>
+        <p class="mt-4 font-semibold text-sm">Sunita K. <span class="text-slate-400 font-normal">— Jaipur, Homemaker</span></p>
+        <div class="text-accent-500 text-sm mt-1">★★★★★</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schools B2B -->
+  <section id="schools" class="bg-slate-900 text-white py-16">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <p class="text-brand-300 text-sm font-medium mb-2">FOR SCHOOLS & COACHING CENTERS</p>
+          <h2 class="text-3xl font-bold mb-4">Bulk Licenses for Institutions</h2>
+          <p class="text-slate-300 mb-6">Give every student spoken English practice with admin dashboard, progress tracking, and invite codes.</p>
+          <ul class="space-y-2 text-sm text-slate-300 mb-6">
+            <li>✓ 50 students — ₹10,000/year</li>
+            <li>✓ 200 students — ₹35,000/year</li>
+            <li>✓ 500+ students — ₹1,00,000/year</li>
+          </ul>
+          <a href="admin.html" class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-semibold px-6 py-3 rounded-xl">School Admin Panel →</a>
+        </div>
+        <div class="bg-slate-800 rounded-2xl p-6 border border-slate-700">
+          <div class="text-4xl mb-3">🏫</div>
+          <h3 class="font-bold text-lg mb-2">Admin Dashboard Includes</h3>
+          <ul class="text-sm text-slate-300 space-y-2">
+            <li>📊 Student progress & streak analytics</li>
+            <li>🔑 Invite codes for easy enrollment</li>
+            <li>📥 Export student data to CSV</li>
+            <li>📜 Certificate tracking per student</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-3xl mx-auto px-4 py-16">
+    <h2 class="text-2xl font-bold text-center mb-10">Frequently Asked Questions</h2>
+    <div class="space-y-3">
+      <details class="bg-white border rounded-xl p-4 group">
+        <summary class="font-semibold cursor-pointer">Is it really free to start?</summary>
+        <p class="text-slate-600 text-sm mt-3">Yes! Daily lessons, Word of the Day, basic AI chat, and 3 speaking sessions per day are free forever. Premium (₹99/month) unlocks unlimited speaking, all scenarios, and certificates.</p>
+      </details>
+      <details class="bg-white border rounded-xl p-4">
+        <summary class="font-semibold cursor-pointer">Do I need to know grammar first?</summary>
+        <p class="text-slate-600 text-sm mt-3">No. We teach Listen → Speak → Understand → Grammar — like a child learns. Grammar comes naturally after you can speak basic sentences.</p>
+      </details>
+      <details class="bg-white border rounded-xl p-4">
+        <summary class="font-semibold cursor-pointer">Can I learn from Hindi?</summary>
+        <p class="text-slate-600 text-sm mt-3">Yes! English Buddy lets you speak in Hindi (or Bengali, Tamil, Telugu) and instantly get the English translation, meaning, and pronunciation guide.</p>
+      </details>
+      <details class="bg-white border rounded-xl p-4">
+        <summary class="font-semibold cursor-pointer">How much time per day?</summary>
+        <p class="text-slate-600 text-sm mt-3">Just 5 minutes for the daily lesson. Optional speaking practice and games take 5–10 more minutes if you want.</p>
+      </details>
+      <details class="bg-white border rounded-xl p-4">
+        <summary class="font-semibold cursor-pointer">Can I install it on my phone?</summary>
+        <p class="text-slate-600 text-sm mt-3">Yes! Tap "Install App" or use your browser's "Add to Home Screen" option. Works on Android and iPhone like a native app.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-100 border-t py-10">
+    <div class="max-w-5xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+        <div class="flex items-center gap-2 font-bold text-brand-700">
+          <span class="text-2xl">🇬🇧</span> English in 100 Days
+        </div>
+        <div class="flex gap-4 text-sm text-slate-500">
+          <button onclick="PWA.shareApp()" class="hover:text-brand-600">Share App</button>
+          <button onclick="PWA.install()" class="hover:text-brand-600">Install App</button>
+          <a href="admin.html" class="hover:text-brand-600">Schools</a>
+        </div>
+      </div>
+      <p class="text-center text-xs text-slate-400 mt-6">© 2026 English in 100 Days • Made with ❤️ for India • Listen → Speak → Understand → Grammar</p>
+    </div>
+  </footer>
+</div>
+
+<!-- AUTH -->
+<div id="view-auth" class="view">
+  <div class="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-brand-50 to-slate-100">
+    <div class="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl border">
+      <h2 class="text-2xl font-bold text-center mb-2">Welcome! 👋</h2>
+      <p class="text-slate-500 text-center text-sm mb-6">Start your 100-day English journey</p>
+      <p id="authStatus" class="text-center text-sm text-slate-500 mb-4 hidden"></p>
+      <button id="btnGoogle" onclick="loginGoogle()" class="w-full flex items-center justify-center gap-2 border border-slate-300 hover:bg-slate-50 font-medium py-3 rounded-xl mb-4">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt=""> Continue with Google
+      </button>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <span class="text-xs text-slate-400">OR</span>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+      <label class="block text-sm font-medium mb-1">Email</label>
+      <input id="authEmail" type="email" placeholder="you@example.com" class="w-full border rounded-xl px-4 py-3 mb-3 focus:ring-2 focus:ring-brand-500 outline-none">
+      <label class="block text-sm font-medium mb-1">Password</label>
+      <input id="authPassword" type="password" placeholder="Min 6 characters" class="w-full border rounded-xl px-4 py-3 mb-3 focus:ring-2 focus:ring-brand-500 outline-none">
+      <button onclick="loginEmail()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-semibold py-3 rounded-xl mb-4">Sign In with Email</button>
+      <div class="flex items-center gap-3 mb-4">
+        <div class="flex-1 h-px bg-slate-200"></div>
+        <span class="text-xs text-slate-400">OR GUEST</span>
+        <div class="flex-1 h-px bg-slate-200"></div>
+      </div>
+      <label class="block text-sm font-medium mb-1">Your Name</label>
+      <input id="authName" type="text" placeholder="e.g. Vishal" class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none">
+      <label class="block text-sm font-medium mb-1">Native Language</label>
+      <select id="authLang" class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none">
+        <option value="hindi">Hindi → English</option>
+        <option value="bengali">Bengali → English</option>
+        <option value="tamil">Tamil → English</option>
+        <option value="telugu">Telugu → English</option>
+      </select>
+      <label class="block text-sm font-medium mb-1">Your Goal</label>
+      <select id="authGoal" class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none">
+        <option value="job">Get a Job</option>
+        <option value="study">School / College</option>
+        <option value="travel">Travel Abroad</option>
+        <option value="daily">Daily Life</option>
+      </select>
+      <label class="block text-sm font-medium mb-1">School Invite Code <span class="text-slate-400">(optional)</span></label>
+      <input id="authSchoolCode" type="text" placeholder="e.g. ENG4K2X" class="w-full border rounded-xl px-4 py-3 mb-6 focus:ring-2 focus:ring-brand-500 outline-none uppercase">
+      <button onclick="login()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-xl mb-3">Continue as Guest →</button>
+      <button onclick="showView('landing')" class="w-full text-slate-500 text-sm py-2">← Back to home</button>
+    </div>
+  </div>
+</div>
+
+<!-- DASHBOARD -->
+<div id="view-dashboard" class="view">
+  <div class="max-w-5xl mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+      <div>
+        <h1 class="text-2xl font-bold">Hello, <span id="dashName">Learner</span>! 👋</h1>
+        <p class="text-slate-500 text-sm">Day <span id="dashDay">1</span> of 100 • Keep your streak alive!</p>
+      </div>
+      <div class="flex gap-3">
+        <div class="bg-orange-50 border border-orange-200 rounded-xl px-4 py-2 text-center">
+          <div class="text-2xl font-bold text-orange-600" id="dashStreak">0</div>
+          <div class="text-xs text-orange-500">Day Streak 🔥</div>
+        </div>
+        <div class="bg-brand-50 border border-brand-200 rounded-xl px-4 py-2 text-center">
+          <div class="text-2xl font-bold text-brand-600" id="dashXP">0</div>
+          <div class="text-xs text-brand-500">XP Points</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Word of Day -->
+    <div id="wotdCard" class="bg-gradient-to-r from-accent-500 to-orange-500 text-white p-6 rounded-2xl mb-6 shadow-lg"></div>
+
+    <!-- Daily Lesson CTA -->
+    <div class="bg-white border-2 border-brand-200 rounded-2xl p-6 mb-6 card-hover cursor-pointer" onclick="startLesson()">
+      <div class="flex items-center justify-between">
+        <div>
+          <p class="text-brand-600 text-sm font-medium">TODAY'S LESSON • 5 MIN</p>
+          <h2 class="text-xl font-bold mt-1" id="dashLessonTitle">At the Market</h2>
+          <p class="text-slate-500 text-sm mt-1">5 words • 1 sentence • 1 conversation • quiz</p>
+        </div>
+        <button class="bg-brand-600 text-white px-6 py-3 rounded-xl font-semibold shrink-0">Start →</button>
+      </div>
+      <div class="mt-4 bg-slate-100 rounded-full h-2">
+        <div id="dashProgress" class="bg-brand-500 h-2 rounded-full transition-all" style="width:0%"></div>
+      </div>
+    </div>
+
+    <!-- Certificates -->
+    <div id="certificatesCard"></div>
+
+    <!-- Feature Grid -->
+    <h3 class="font-semibold mb-4">Practice & Learn</h3>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <button onclick="showView('speaking')" class="bg-white border rounded-2xl p-4 text-left card-hover">
+        <div class="text-2xl mb-2">🎤</div>
+        <div class="font-semibold text-sm">Speaking</div>
+        <div class="text-xs text-slate-500">AI scores</div>
+      </button>
+      <button onclick="showView('buddy')" class="bg-white border rounded-2xl p-4 text-left card-hover">
+        <div class="text-2xl mb-2">🇮🇳</div>
+        <div class="font-semibold text-sm">English Buddy</div>
+        <div class="text-xs text-slate-500 hindi">हिंदी → English</div>
+      </button>
+      <button onclick="showView('scenarios')" class="bg-white border rounded-2xl p-4 text-left card-hover">
+        <div class="text-2xl mb-2">🍽️</div>
+        <div class="font-semibold text-sm">Situations</div>
+        <div class="text-xs text-slate-500">Real-life</div>
+      </button>
+      <button onclick="showView('chat')" class="bg-white border rounded-2xl p-4 text-left card-hover">
+        <div class="text-2xl mb-2">🤖</div>
+        <div class="font-semibold text-sm">AI Teacher</div>
+        <div class="text-xs text-slate-500">Ask anything</div>
+      </button>
+      <button onclick="showView('games')" class="bg-white border rounded-2xl p-4 text-left card-hover">
+        <div class="text-2xl mb-2">🎮</div>
+        <div class="font-semibold text-sm">Games</div>
+        <div class="text-xs text-slate-500">Fun practice</div>
+      </button>
+      <button onclick="showPremium()" class="bg-white border rounded-2xl p-4 text-left card-hover border-accent-300">
+        <div class="text-2xl mb-2">⭐</div>
+        <div class="font-semibold text-sm text-accent-600">Go Premium</div>
+        <div class="text-xs text-slate-500">₹99/month</div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- LESSON -->
+<div id="view-lesson" class="view">
+  <div class="max-w-2xl mx-auto px-4 py-8">
+    <button onclick="showView('dashboard')" class="text-brand-600 text-sm mb-4">← Back to Dashboard</button>
+    <div id="lessonContent"></div>
+  </div>
+</div>
+
+<!-- SPEAKING -->
+<div id="view-speaking" class="view">
+  <div class="max-w-2xl mx-auto px-4 py-8">
+    <button onclick="showView('dashboard')" class="text-brand-600 text-sm mb-4">← Back</button>
+    <h2 class="text-2xl font-bold mb-2">AI Speaking Practice 🎤</h2>
+    <p class="text-slate-500 text-sm mb-6">Speak the sentence below. We'll score your pronunciation, fluency, and confidence.</p>
+    <div class="bg-white border rounded-2xl p-6 mb-6">
+      <p class="text-sm text-brand-600 font-medium mb-2">SAY THIS:</p>
+      <p id="speakTarget" class="text-xl font-semibold">Hello, how are you?</p>
+      <button onclick="speakText(document.getElementById('speakTarget').textContent)" class="mt-3 text-sm text-brand-600 hover:underline">🔊 Listen first</button>
+    </div>
+    <div class="text-center mb-6">
+      <button id="micBtn" onclick="toggleMic()" class="w-20 h-20 rounded-full bg-red-500 hover:bg-red-600 text-white text-3xl shadow-lg flex items-center justify-center mx-auto">🎤</button>
+      <p id="micStatus" class="text-sm text-slate-500 mt-3">Tap mic and speak</p>
+      <p id="heardText" class="text-sm text-slate-700 mt-2 italic"></p>
+    </div>
+    <div id="scorePanel" class="hidden grid grid-cols-3 gap-4 mb-6">
+      <div class="bg-white border rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-brand-600" id="scorePron">0%</div>
+        <div class="text-xs text-slate-500">Pronunciation</div>
+      </div>
+      <div class="bg-white border rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-green-600" id="scoreFluency">0%</div>
+        <div class="text-xs text-slate-500">Fluency</div>
+      </div>
+      <div class="bg-white border rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-purple-600" id="scoreConf">0%</div>
+        <div class="text-xs text-slate-500">Confidence</div>
+      </div>
+    </div>
+    <button onclick="nextSpeakSentence()" class="w-full border border-brand-300 text-brand-700 py-3 rounded-xl font-medium">Next Sentence →</button>
+  </div>
+</div>
+
+<!-- ENGLISH BUDDY -->
+<div id="view-buddy" class="view">
+  <div class="max-w-2xl mx-auto px-4 py-8">
+    <button onclick="showView('dashboard')" class="text-brand-600 text-sm mb-4">← Back</button>
+    <h2 class="text-2xl font-bold mb-1">English Buddy 🇮🇳</h2>
+    <p class="text-slate-500 text-sm mb-6 hindi">हिंदी में बोलें — अंग्रेजी सीखें</p>
+    <div class="bg-brand-50 border border-brand-200 rounded-2xl p-4 mb-4">
+      <p class="text-sm text-brand-700 font-medium mb-2">Try saying:</p>
+      <p class="hindi text-lg">मुझे अंग्रेजी बोलना सीखना है।</p>
+    </div>
+    <div class="text-center mb-4">
+      <button id="buddyMicBtn" onclick="toggleBuddyMic()" class="w-16 h-16 rounded-full bg-brand-600 text-white text-2xl shadow-lg mx-auto flex items-center justify-center">🎤</button>
+      <p id="buddyMicStatus" class="text-sm text-slate-500 mt-2">Speak in Hindi or type below</p>
+    </div>
+    <input id="buddyInput" type="text" placeholder="Type Hindi or English..." class="w-full border rounded-xl px-4 py-3 mb-3 hindi">
+    <button id="buddyTranslateBtn" onclick="translateBuddy()" class="w-full bg-brand-600 text-white py-3 rounded-xl font-semibold mb-6">Translate →</button>
+    <div id="buddyResult" class="hidden bg-white border rounded-2xl p-6">
+      <div class="mb-4">
+        <p class="text-xs text-slate-500 uppercase font-medium">English</p>
+        <p id="buddyEnglish" class="text-xl font-bold text-brand-700"></p>
+      </div>
+      <div class="mb-4">
+        <p class="text-xs text-slate-500 uppercase font-medium">Pronunciation</p>
+        <p id="buddyPhonetic" class="text-slate-600"></p>
+      </div>
+      <div class="mb-4">
+        <p class="text-xs text-slate-500 uppercase font-medium">Meaning</p>
+        <p id="buddyMeaning" class="text-slate-700"></p>
+      </div>
+      <div class="mb-4">
+        <p class="text-xs text-slate-500 uppercase font-medium">Practice</p>
+        <p id="buddyPractice" class="text-slate-700 italic"></p>
+      </div>
+      <button onclick="speakText(document.getElementById('buddyEnglish').textContent)" class="text-brand-600 text-sm font-medium">🔊 Hear pronunciation</button>
+      <button onclick="practiceBuddy()" class="ml-4 bg-green-600 text-white text-sm px-4 py-2 rounded-lg">Practice Speaking →</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCENARIOS -->
+<div id="view-scenarios" class="view">
+  <div class="max-w-2xl mx-auto px-4 py-8">
+    <button onclick="showView('dashboard')" class="text-brand-600 text-sm mb-4">← Back</button>
+    <h2 class="text-2xl font-bold mb-6">Real-Life Situations</h2>
+    <div id="scenarioList" class="space-y-3 mb-6"></div>
+    <div id="scenarioPlay" class="hidden bg-white border rounded-2xl p-6">
+      <h3 id="scenarioTitle" class="font-bold text-lg mb-4"></h3>
+      <div id="scenarioChat" class="space-y-3 mb-4 max-h-64 overflow-y-auto"></div>
+      <input id="scenarioInput" type="text" placeholder="Type your response..." class="w-full border rounded-xl px-4 py-3 mb-2" onkeydown="if(event.key==='Enter')sendScenario()">
+      <button onclick="sendScenario()" class="w-full bg-brand-600 text-white py-3 rounded-xl font-semibold">Send →</button>
+    </div>
+  </div>
+</div>
+
+<!-- AI CHAT -->
+<div id="view-chat" class="view">
+  <div class="max-w-2xl mx-auto px-4 py-8 flex flex-col" style="min-height:calc(100vh - 64px)">
+    <button onclick="showView('dashboard')" class="text-brand-600 text-sm mb-4">← Back</button>
+    <h2 class="text-2xl font-bold mb-4">AI English Teacher 🤖</h2>
+    <div id="chatMessages" class="flex-1 space-y-3 mb-4 overflow-y-auto max-h-96"></div>
+    <div class="flex gap-2">
+      <input id="chatInput" type="text" placeholder="Ask: How do I introduce myself?" class="flex-1 border rounded-xl px-4 py-3" onkeydown="if(event.key==='Enter')sendChat()">
+      <button onclick="sendChat()" class="bg-brand-600 text-white px-5 rounded-xl font-semibold">Send</button>
+    </div>
+  </div>
+</div>
+
+<!-- GAMES -->
+<div id="view-games" class="view">
+  <div class="max-w-2xl mx-auto px-4 py-8">
+    <button onclick="showView('dashboard')" class="text-brand-600 text-sm mb-4">← Back</button>
+    <h2 class="text-2xl font-bold mb-6">English Games 🎮</h2>
+    <div id="gameArea"></div>
+  </div>
+</div>
+
+<!-- PREMIUM MODAL -->
+<div id="premiumModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
+  <div class="bg-white rounded-2xl p-8 max-w-md w-full">
+    <h2 class="text-2xl font-bold mb-2">⭐ Go Premium</h2>
+    <p class="text-slate-500 text-sm mb-6">Unlock unlimited speaking, all scenarios, and certificates.</p>
+    <p class="text-4xl font-extrabold text-brand-700 mb-6">₹99<span class="text-base font-normal text-slate-500">/month</span></p>
+    <ul class="text-sm space-y-2 mb-6">
+      <li>✅ Unlimited AI speaking practice</li>
+      <li>✅ All interview & travel scenarios</li>
+      <li>✅ Progress analytics</li>
+      <li>✅ Completion certificates</li>
+    </ul>
+    <button id="btnBuyPremium" onclick="buyPremium()" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 rounded-xl mb-2">Upgrade Now — ₹99/month</button>
+    <button onclick="closePremium()" class="w-full text-slate-500 text-sm py-2">Maybe later</button>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script src="config.local.js" onerror=""></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-functions-compat.js"></script>
+<script src="js/firebase-auth.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="js/razorpay-pay.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/ai-service.js"></script>
+<script src="js/certificates.js"></script>
+<script src="js/pwa.js"></script>
+
+<script>
+// ===== DATA =====
+let LESSONS = {};
+
+async function loadLessons() {
+  try {
+    const res = await fetch('./lessons.json');
+    LESSONS = await res.json();
+  } catch (e) {
+    console.error('Failed to load lessons:', e);
+  }
+}
+
+const BUDDY_MAP = {
+  "मुझे अंग्रेजी बोलना सीखना है": { en: "I want to learn English speaking.", meaning: "Expressing desire to learn spoken English", practice: "Say: I want to learn English speaking." },
+  "मेरा नाम विशाल है": { en: "My name is Vishal.", meaning: "Introducing yourself by name", practice: "Say: My name is Vishal." },
+  "आप कैसे हैं": { en: "How are you?", meaning: "A common greeting question", practice: "Say: How are you?" },
+  "मुझे नौकरी चाहिए": { en: "I need a job.", meaning: "Expressing need for employment", practice: "Say: I need a job." },
+  "कीमत क्या है": { en: "What is the price?", meaning: "Asking about cost", practice: "Say: What is the price?" }
+};
+
+const SCENARIOS = [
+  { id:"restaurant", icon:"🍽️", title:"At Restaurant", opening:"Welcome! What would you like to order?", responses:["Great choice! Anything to drink?","Sure! Your order will be ready in 10 minutes.","Excellent! Can I get you anything else?"] },
+  { id:"interview", icon:"💼", title:"Job Interview", opening:"Tell me about yourself.", responses:["That's interesting! Why do you want this job?","Good! What are your strengths?","Thank you. Do you have any questions for us?"] },
+  { id:"airport", icon:"✈️", title:"At Airport", opening:"May I see your passport, please?", responses:["Thank you. Any checked baggage?","Please proceed to gate 12. Have a nice flight!","Your boarding pass is ready."] },
+  { id:"hotel", icon:"🏨", title:"At Hotel", opening:"Good evening! Do you have a reservation?", responses:["Welcome! Here's your room key. Room 305.","Breakfast is from 7 to 10 AM. Enjoy your stay!","Is there anything else I can help with?"] },
+  { id:"taxi", icon:"🚕", title:"In a Taxi", opening:"Where would you like to go?", responses:["Sure! It will take about 20 minutes.","The fare will be around ₹250.","We're almost there!"] },
+  { id:"shopping", icon:"🛍️", title:"Shopping", opening:"Can I help you find something?", responses:["This shirt is ₹999. We have a 20% discount today!","What size do you need?","Would you like to try it on?"] }
+];
+
+const SPEAK_SENTENCES = ["Hello, how are you?","My name is Vishal.","I would like a pizza, please.","What is the price?","Nice to meet you!","I am from India.","Thank you very much.","Can you help me, please?"];
+
+const CHAT_RESPONSES = {
+  "introduce": "To introduce yourself, say: 'Hello, my name is [your name]. I am from [city]. Nice to meet you!' Practice this daily for confidence.",
+  "interview": "In interviews, start with: 'Good morning. My name is [name]. I am a [profession/student] from [city].' Keep it under 60 seconds. Smile and speak slowly.",
+  "order": "At a restaurant, say: 'I would like [food], please.' To ask for the bill: 'Can I have the bill, please?'",
+  "default": "Great question! In spoken English, focus on simple sentences first. Listen → Repeat → Use in conversation. Try today's 5-minute lesson for structured practice!"
+};
+
+// ===== STATE =====
+const STORAGE_KEY = 'ei100d_user';
+let user = null;
+let recognition = null;
+let micActive = false;
+let buddyMicActive = false;
+let currentScenario = null;
+let scenarioStep = 0;
+let speakIdx = 0;
+let lessonStep = 0;
+let currentLesson = null;
+let quizAnswers = [];
+
+function loadUser() {
+  try { user = JSON.parse(localStorage.getItem(STORAGE_KEY)); } catch(e) { user = null; }
+  return user;
+}
+
+function saveUser() {
+  window.user = user;
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
+  if (user?.uid && window.FirebaseApp?.ready) {
+    window.FirebaseApp.saveUserDoc(user.uid, window.FirebaseApp.toFirestore(user)).catch(console.warn);
+  }
+}
+
+function defaultUser(name, lang, goal, extras = {}) {
+  return {
+    name, nativeLanguage: lang, goal,
+    plan: 'free', currentDay: 1, completedDays: [], certificates: [], streak: 0,
+    lastActiveDate: null, xp: 0, dailySpeaking: 0, chatCount: 0,
+    ...extras
+  };
+}
+
+function setAuthStatus(msg, isError) {
+  const el = document.getElementById('authStatus');
+  if (!msg) { el.classList.add('hidden'); return; }
+  el.textContent = msg;
+  el.className = 'text-center text-sm mb-4 ' + (isError ? 'text-red-500' : 'text-brand-600');
+  el.classList.remove('hidden');
+}
+
+function isPremiumUser() {
+  return window.Payments?.isPremium(user) || user?.plan === 'premium';
+}
+
+// ===== ROUTING =====
+function showView(id) {
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  document.getElementById('view-' + id).classList.add('active');
+  const nav = document.getElementById('mainNav');
+  if (['landing','auth'].includes(id)) { nav.classList.add('hidden'); }
+  else { nav.classList.remove('hidden'); updateNav(); }
+  if (id === 'dashboard') renderDashboard();
+  if (id === 'scenarios') renderScenarioList();
+  if (id === 'games') renderGame();
+  if (id === 'speaking') { speakIdx = 0; document.getElementById('speakTarget').textContent = SPEAK_SENTENCES[0]; }
+  window.scrollTo(0,0);
+}
+
+function updateNav() {
+  if (!user) return;
+  const el = document.getElementById('navStreak');
+  el.textContent = '🔥 ' + user.streak;
+  el.classList.toggle('hidden', user.streak === 0);
+}
+
+function shareWordOfDay() {
+  const text = window._wotdShare || 'Learn English in 100 Days!';
+  const url = location.origin + location.pathname;
+  window.open('https://wa.me/?text=' + encodeURIComponent(text + '\n' + url), '_blank');
+}
+
+// ===== AUTH =====
+function login() {
+  const name = document.getElementById('authName').value.trim() || 'Learner';
+  const lang = document.getElementById('authLang').value;
+  const goal = document.getElementById('authGoal').value;
+  const schoolCode = document.getElementById('authSchoolCode')?.value.trim().toUpperCase() || '';
+  user = defaultUser(name, lang, goal, schoolCode ? { schoolCode, plan: 'school' } : {});
+  saveUser();
+  showView('dashboard');
+}
+
+async function loginGoogle() {
+  if (!window.FirebaseApp?.isEnabled()) {
+    setAuthStatus('Firebase not configured. Use Guest mode or add keys to config.local.js', true);
+    return;
+  }
+  setAuthStatus('Signing in with Google...');
+  try {
+    const fbUser = await window.FirebaseApp.signInWithGoogle();
+    await completeFirebaseLogin(fbUser);
+  } catch (e) {
+    setAuthStatus(e.message || 'Google sign-in failed', true);
+  }
+}
+
+async function loginEmail() {
+  if (!window.FirebaseApp?.isEnabled()) {
+    setAuthStatus('Firebase not configured. Use Guest mode or add keys to config.local.js', true);
+    return;
+  }
+  const email = document.getElementById('authEmail').value.trim();
+  const password = document.getElementById('authPassword').value;
+  if (!email || password.length < 6) {
+    setAuthStatus('Enter email and password (min 6 chars)', true);
+    return;
+  }
+  setAuthStatus('Signing in...');
+  try {
+    const fbUser = await window.FirebaseApp.signInWithEmail(email, password);
+    await completeFirebaseLogin(fbUser);
+  } catch (e) {
+    setAuthStatus(e.message || 'Email sign-in failed', true);
+  }
+}
+
+async function completeFirebaseLogin(fbUser) {
+  const lang = document.getElementById('authLang').value;
+  const goal = document.getElementById('authGoal').value;
+  const name = document.getElementById('authName').value.trim() || fbUser.displayName || 'Learner';
+  let doc = await window.FirebaseApp.loadUserDoc(fbUser.uid);
+  if (!doc) doc = await window.FirebaseApp.createUserProfile(fbUser, { name, nativeLanguage: lang, learningGoal: goal });
+  const local = loadUser();
+  user = window.FirebaseApp.mergeProfiles(fbUser, doc, local);
+  if (!user.name || user.name === 'Learner') user.name = name;
+  saveUser();
+  setAuthStatus('');
+  showView('dashboard');
+}
+
+async function logout() {
+  if (!confirm('Logout? Your progress is saved.')) return;
+  if (window.FirebaseApp?.ready) await window.FirebaseApp.signOut();
+  user = null;
+  localStorage.removeItem(STORAGE_KEY);
+  showView('landing');
+}
+
+// ===== DASHBOARD =====
+function renderDashboard() {
+  if (!user) { showView('auth'); return; }
+  const day = user.currentDay;
+  const lesson = LESSONS[String(day)] || LESSONS['1'];
+  document.getElementById('dashName').textContent = user.name;
+  document.getElementById('dashDay').textContent = day;
+  document.getElementById('dashStreak').textContent = user.streak;
+  document.getElementById('dashXP').textContent = user.xp;
+  if (isPremiumUser()) {
+    document.getElementById('dashName').innerHTML = user.name + ' <span class="text-xs bg-accent-100 text-accent-700 px-2 py-0.5 rounded-full">⭐ Premium</span>';
+  }
+  document.getElementById('dashLessonTitle').textContent = 'Day ' + day + ': ' + lesson.title;
+  const pct = Math.round((user.completedDays.length / 100) * 100);
+  document.getElementById('dashProgress').style.width = pct + '%';
+  const wotd = lesson.wordOfTheDay;
+  const shareText = `📚 Word of the Day: *${wotd.word}* — ${wotd.meaning}\n"${wotd.example}"\n\nLearn English in 100 Days 🇬🇧🇮🇳`;
+  document.getElementById('wotdCard').innerHTML = `
+    <div class="flex justify-between items-start gap-4">
+      <div class="flex-1">
+        <p class="text-orange-100 text-sm font-medium">WORD OF THE DAY</p>
+        <h3 class="text-3xl font-extrabold mt-1">${wotd.word}</h3>
+        <p class="mt-2 opacity-90">${wotd.meaning}</p>
+        <p class="mt-2 text-sm italic opacity-80">"${wotd.example}"</p>
+        <p class="hindi text-sm mt-1 opacity-70">${wotd.meaningHindi}</p>
+      </div>
+      <button onclick="shareWordOfDay()" class="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg text-sm shrink-0" title="Share on WhatsApp">📤 Share</button>
+    </div>`;
+  window._wotdShare = shareText;
+  document.getElementById('certificatesCard').innerHTML = Certificates.renderDashboardCard(user);
+}
+
+// ===== LESSON =====
+function startLesson() {
+  if (!user) return;
+  currentLesson = LESSONS[String(user.currentDay)] || LESSONS['1'];
+  lessonStep = 0;
+  quizAnswers = [];
+  renderLessonStep();
+  showView('lesson');
+}
+
+function renderLessonStep() {
+  const L = currentLesson;
+  const el = document.getElementById('lessonContent');
+  const steps = ['words','sentence','conversation','quiz'];
+  const step = steps[lessonStep];
+
+  if (step === 'words') {
+    el.innerHTML = `<div class="mb-4"><span class="text-brand-600 text-sm font-medium">DAY ${L.day} • STEP 1/4</span><h2 class="text-2xl font-bold">${L.title} — 5 New Words</h2></div>
+    <div class="space-y-3">${L.words.map(w => `
+      <div class="bg-white border rounded-xl p-4 flex justify-between items-start">
+        <div>
+          <span class="font-bold text-lg">${w.word}</span>
+          <span class="text-slate-400 text-sm ml-2">${w.phonetic}</span>
+          <p class="text-slate-600 text-sm mt-1">${w.meaning}</p>
+          <p class="hindi text-sm text-slate-500">${w.meaningHindi}</p>
+          <p class="text-sm text-brand-600 mt-1 italic">"${w.example}"</p>
+        </div>
+        <button onclick="speakText('${w.word}. ${w.example}')" class="text-xl shrink-0 ml-2">🔊</button>
+      </div>`).join('')}
+    <button onclick="lessonStep++;renderLessonStep()" class="w-full mt-6 bg-brand-600 text-white py-3 rounded-xl font-semibold">Next: Sentence Pattern →</button>`;
+  }
+
+  if (step === 'sentence') {
+    el.innerHTML = `<div class="mb-4"><span class="text-brand-600 text-sm font-medium">STEP 2/4</span><h2 class="text-2xl font-bold">Sentence Pattern</h2></div>
+    <div class="bg-white border rounded-2xl p-6 mb-4">
+      <p class="text-xl font-semibold">${L.sentence.english}</p>
+      <p class="hindi text-slate-500 mt-2">${L.sentence.hindi}</p>
+      <p class="text-sm text-brand-600 mt-3 bg-brand-50 p-3 rounded-lg">Pattern: ${L.sentence.pattern}</p>
+      <button onclick="speakText('${L.sentence.english.replace(/'/g,"\\'")}')" class="mt-4 text-brand-600 text-sm font-medium">🔊 Listen & Repeat</button>
+    </div>
+    <button onclick="lessonStep++;renderLessonStep()" class="w-full bg-brand-600 text-white py-3 rounded-xl font-semibold">Next: Conversation →</button>`;
+  }
+
+  if (step === 'conversation') {
+    el.innerHTML = `<div class="mb-4"><span class="text-brand-600 text-sm font-medium">STEP 3/4</span><h2 class="text-2xl font-bold">${L.conversation.title}</h2></div>
+    <div class="space-y-3 mb-6">${L.conversation.lines.map(l => `
+      <div class="flex ${l.speaker==='user'?'justify-end':''}">
+        <div class="${l.speaker==='user'?'bg-brand-600 text-white':'bg-white border'} rounded-2xl px-4 py-3 max-w-[85%]">
+          <p>${l.text}</p>
+          ${l.hint ? `<p class="text-xs mt-1 ${l.speaker==='user'?'text-brand-200':'text-slate-400'}">${l.hint}</p>` : ''}
+        </div>
+      </div>`).join('')}
+    <button onclick="lessonStep++;renderLessonStep()" class="w-full bg-brand-600 text-white py-3 rounded-xl font-semibold">Next: Quiz →</button>`;
+  }
+
+  if (step === 'quiz') {
+    const q = L.quiz[quizAnswers.length];
+    if (!q) { finishLesson(); return; }
+    el.innerHTML = `<div class="mb-4"><span class="text-brand-600 text-sm font-medium">STEP 4/4 • Q${quizAnswers.length+1}/3</span><h2 class="text-2xl font-bold">Quick Quiz</h2></div>
+    <p class="text-lg font-medium mb-4">${q.question}</p>
+    <div class="space-y-2">${q.options.map((o,i) => `
+      <button onclick="answerQuiz(${i})" class="w-full text-left border rounded-xl px-4 py-3 hover:bg-brand-50 hover:border-brand-300 transition">${o}</button>`).join('')}</div>
+    <div id="quizFeedback" class="mt-4"></div>`;
+  }
+}
+
+function answerQuiz(idx) {
+  const q = currentLesson.quiz[quizAnswers.length];
+  const correct = idx === q.correctIndex;
+  quizAnswers.push(correct);
+  document.getElementById('quizFeedback').innerHTML = `
+    <div class="${correct?'bg-green-50 border-green-200 text-green-800':'bg-red-50 border-red-200 text-red-800'} border rounded-xl p-4">
+      ${correct ? '✅ Correct!' : '❌ Wrong. Correct: ' + q.options[q.correctIndex]}
+      <p class="text-sm mt-1">${q.explanation}</p>
+    </div>
+    <button onclick="lessonStep=3;quizAnswers.length<3?renderLessonStep():finishLesson()" class="w-full mt-4 bg-brand-600 text-white py-3 rounded-xl font-semibold mt-3">
+      ${quizAnswers.length < 3 ? 'Next Question →' : 'Finish Lesson →'}
+    </button>`;
+}
+
+function finishLesson() {
+  const score = quizAnswers.filter(Boolean).length;
+  const passed = score >= 2;
+  let certHtml = '';
+  if (passed && user) {
+    const today = new Date().toISOString().slice(0,10);
+    const justCompleted = user.currentDay;
+    if (!user.completedDays.includes(justCompleted)) {
+      user.completedDays.push(justCompleted);
+      user.xp += 50;
+      if (user.lastActiveDate !== today) {
+        const yesterday = new Date(); yesterday.setDate(yesterday.getDate()-1);
+        user.streak = user.lastActiveDate === yesterday.toISOString().slice(0,10) ? user.streak + 1 : 1;
+        user.lastActiveDate = today;
+      }
+      const certType = Certificates.checkMilestone(justCompleted);
+      if (certType) {
+        if (!user.certificates) user.certificates = [];
+        if (!user.certificates.includes(certType)) user.certificates.push(certType);
+        const days = Certificates.MILESTONES[certType].days;
+        certHtml = `
+          <div class="bg-accent-50 border border-accent-200 rounded-xl p-4 mt-4 mb-2">
+            <p class="font-bold text-accent-800">🏆 Milestone Unlocked: ${days} Days!</p>
+            <p class="text-sm text-accent-700 mt-1">You've earned a certificate.</p>
+            <button onclick="Certificates.download('${certType}')" class="mt-3 bg-accent-500 text-white px-6 py-2 rounded-lg font-semibold text-sm">Download Certificate</button>
+          </div>`;
+      }
+      user.currentDay = Math.min(user.currentDay + 1, 100);
+      saveUser();
+    }
+  }
+  document.getElementById('lessonContent').innerHTML = `
+    <div class="text-center py-12">
+      <div class="text-6xl mb-4">${passed ? '🎉' : '📚'}</div>
+      <h2 class="text-2xl font-bold mb-2">${passed ? 'Lesson Complete!' : 'Keep Practicing!'}</h2>
+      <p class="text-slate-500 mb-2">Quiz score: ${score}/3 ${passed ? '(Passed!)' : '(Need 2/3 to pass)'}</p>
+      ${passed ? `<p class="text-brand-600 font-medium">+50 XP • Streak: ${user.streak} days 🔥</p>${certHtml}` : '<p class="text-slate-500">Try again to unlock the next day.</p>'}
+      <button onclick="showView('dashboard')" class="mt-6 bg-brand-600 text-white px-8 py-3 rounded-xl font-semibold">Back to Dashboard</button>
+    </div>`;
+}
+
+// ===== SPEECH =====
+function speakText(text) {
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.85;
+  speechSynthesis.speak(u);
+}
+
+function initRecognition() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return null;
+  const r = new SR();
+  r.lang = 'en-IN';
+  r.interimResults = false;
+  r.maxAlternatives = 1;
+  return r;
+}
+
+function toggleMic() {
+  if (!user) return;
+  if (!isPremiumUser() && user.dailySpeaking >= 3) { showPremium(); return; }
+  const btn = document.getElementById('micBtn');
+  if (micActive) { recognition?.stop(); return; }
+  recognition = initRecognition();
+  if (!recognition) { document.getElementById('micStatus').textContent = 'Speech recognition not supported. Use Chrome.'; return; }
+  micActive = true;
+  btn.classList.add('mic-active');
+  document.getElementById('micStatus').textContent = 'Listening... speak now!';
+  recognition.onresult = e => {
+    const heard = e.results[0][0].transcript;
+    document.getElementById('heardText').textContent = 'You said: "' + heard + '"';
+    scoreSpeaking(heard, document.getElementById('speakTarget').textContent);
+    user.dailySpeaking++;
+    saveUser();
+  };
+  recognition.onerror = () => { document.getElementById('micStatus').textContent = 'Could not hear. Try again.'; stopMic(); };
+  recognition.onend = stopMic;
+  recognition.start();
+}
+
+function stopMic() {
+  micActive = false;
+  document.getElementById('micBtn')?.classList.remove('mic-active');
+  document.getElementById('micStatus').textContent = 'Tap mic and speak';
+}
+
+function scoreSpeaking(heard, expected) {
+  const h = heard.toLowerCase().replace(/[^a-z\s]/g,'').trim();
+  const e = expected.toLowerCase().replace(/[^a-z\s]/g,'').trim();
+  const hWords = h.split(/\s+/), eWords = e.split(/\s+/);
+  let matches = 0;
+  eWords.forEach(w => { if (hWords.some(hw => hw.includes(w) || w.includes(hw))) matches++; });
+  const pron = Math.min(100, Math.round((matches / eWords.length) * 100 + Math.random() * 10));
+  const fluency = Math.min(100, Math.round(60 + hWords.length * 8 + Math.random() * 15));
+  const conf = Math.min(100, Math.round(55 + heard.length * 1.5 + Math.random() * 20));
+  document.getElementById('scorePanel').classList.remove('hidden');
+  document.getElementById('scorePron').textContent = pron + '%';
+  document.getElementById('scoreFluency').textContent = fluency + '%';
+  document.getElementById('scoreConf').textContent = conf + '%';
+}
+
+function nextSpeakSentence() {
+  speakIdx = (speakIdx + 1) % SPEAK_SENTENCES.length;
+  document.getElementById('speakTarget').textContent = SPEAK_SENTENCES[speakIdx];
+  document.getElementById('heardText').textContent = '';
+  document.getElementById('scorePanel').classList.add('hidden');
+}
+
+// ===== ENGLISH BUDDY =====
+function toggleBuddyMic() {
+  const r = initRecognition();
+  if (!r) return;
+  r.lang = 'hi-IN';
+  document.getElementById('buddyMicStatus').textContent = 'Listening in Hindi...';
+  r.onresult = e => { document.getElementById('buddyInput').value = e.results[0][0].transcript; translateBuddy(); };
+  r.onend = () => { document.getElementById('buddyMicStatus').textContent = 'Speak in Hindi or type below'; };
+  r.start();
+}
+
+async function translateBuddy() {
+  const input = document.getElementById('buddyInput').value.trim();
+  if (!input) return;
+  const btn = document.getElementById('buddyTranslateBtn');
+  btn.disabled = true;
+  btn.textContent = 'Translating...';
+  try {
+    const result = await AIService.englishBuddy(input);
+    document.getElementById('buddyResult').classList.remove('hidden');
+    document.getElementById('buddyEnglish').textContent = result.en;
+    document.getElementById('buddyPhonetic').textContent = result.phonetic || '';
+    document.getElementById('buddyMeaning').textContent = result.meaning + (result.source === 'openai' ? ' ✨ AI' : '');
+    document.getElementById('buddyPractice').textContent = result.practice;
+  } finally {
+    btn.disabled = false;
+    btn.textContent = 'Translate →';
+  }
+}
+
+function practiceBuddy() {
+  document.getElementById('speakTarget').textContent = document.getElementById('buddyEnglish').textContent;
+  showView('speaking');
+}
+
+// ===== SCENARIOS =====
+function renderScenarioList() {
+  document.getElementById('scenarioList').innerHTML = SCENARIOS.map(s => `
+    <button onclick="startScenario('${s.id}')" class="w-full bg-white border rounded-xl p-4 flex items-center gap-4 text-left card-hover">
+      <span class="text-3xl">${s.icon}</span>
+      <div><div class="font-semibold">${s.title}</div><div class="text-sm text-slate-500">${s.opening}</div></div>
+    </button>`).join('');
+  document.getElementById('scenarioPlay').classList.add('hidden');
+}
+
+function startScenario(id) {
+  currentScenario = SCENARIOS.find(s => s.id === id);
+  scenarioStep = 0;
+  document.getElementById('scenarioList').classList.add('hidden');
+  document.getElementById('scenarioPlay').classList.remove('hidden');
+  document.getElementById('scenarioTitle').textContent = currentScenario.icon + ' ' + currentScenario.title;
+  document.getElementById('scenarioChat').innerHTML = `<div class="bg-slate-100 rounded-xl px-4 py-3 max-w-[85%]"><p>${currentScenario.opening}</p></div>`;
+  speakText(currentScenario.opening);
+}
+
+function sendScenario() {
+  const input = document.getElementById('scenarioInput').value.trim();
+  if (!input || !currentScenario) return;
+  const chat = document.getElementById('scenarioChat');
+  chat.innerHTML += `<div class="flex justify-end"><div class="bg-brand-600 text-white rounded-xl px-4 py-3 max-w-[85%]"><p>${input}</p></div></div>`;
+  document.getElementById('scenarioInput').value = '';
+  const resp = currentScenario.responses[scenarioStep % currentScenario.responses.length];
+  scenarioStep++;
+  setTimeout(() => {
+    chat.innerHTML += `<div class="bg-slate-100 rounded-xl px-4 py-3 max-w-[85%]"><p>${resp}</p></div>`;
+    chat.scrollTop = chat.scrollHeight;
+    speakText(resp);
+  }, 600);
+  chat.scrollTop = chat.scrollHeight;
+}
+
+// ===== AI CHAT =====
+async function sendChat() {
+  const input = document.getElementById('chatInput').value.trim();
+  if (!input) return;
+  const msgs = document.getElementById('chatMessages');
+  msgs.innerHTML += `<div class="flex justify-end"><div class="bg-brand-600 text-white rounded-2xl px-4 py-3 max-w-[80%] text-sm">${input}</div></div>`;
+  document.getElementById('chatInput').value = '';
+  msgs.innerHTML += `<div id="chatTyping" class="flex"><div class="bg-white border rounded-2xl px-4 py-3 text-sm text-slate-400">🤖 Thinking...</div></div>`;
+  msgs.scrollTop = msgs.scrollHeight;
+  const { reply, source } = await AIService.chatTeacher(input);
+  document.getElementById('chatTyping')?.remove();
+  msgs.innerHTML += `<div class="flex"><div class="bg-white border rounded-2xl px-4 py-3 max-w-[80%] text-sm">🤖 ${reply}${source === 'openai' ? ' <span class="text-brand-400 text-xs">✨</span>' : ''}</div></div>`;
+  msgs.scrollTop = msgs.scrollHeight;
+  if (user) { user.chatCount++; saveUser(); }
+}
+
+// ===== GAMES =====
+function renderGame() {
+  const words = Object.values(LESSONS)[0].words;
+  const w = words[Math.floor(Math.random() * words.length)];
+  const scrambled = w.word.split('').sort(() => Math.random() - 0.5).join('');
+  document.getElementById('gameArea').innerHTML = `
+    <div class="bg-white border rounded-2xl p-6">
+      <p class="text-sm text-brand-600 font-medium mb-2">WORD PUZZLE — Unscramble the word</p>
+      <p class="text-3xl font-bold tracking-widest text-center my-6">${scrambled}</p>
+      <p class="text-sm text-slate-500 text-center mb-4">Hint: ${w.meaning}</p>
+      <input id="gameInput" type="text" placeholder="Your answer..." class="w-full border rounded-xl px-4 py-3 mb-3 text-center text-lg">
+      <button onclick="checkGame('${w.word}')" class="w-full bg-brand-600 text-white py-3 rounded-xl font-semibold">Check Answer</button>
+      <div id="gameResult" class="mt-4 text-center"></div>
+      <button onclick="renderGame()" class="w-full mt-3 border text-brand-600 py-2 rounded-xl text-sm">New Word →</button>
+    </div>`;
+}
+
+function checkGame(answer) {
+  const val = document.getElementById('gameInput').value.trim();
+  const correct = val.toLowerCase() === answer.toLowerCase();
+  document.getElementById('gameResult').innerHTML = correct
+    ? '<p class="text-green-600 font-semibold">✅ Correct! +10 XP</p>'
+    : '<p class="text-red-600 font-semibold">❌ Answer: ' + answer + '</p>';
+  if (correct && user) { user.xp += 10; saveUser(); }
+}
+
+// ===== PREMIUM =====
+function showPremium() {
+  const btn = document.getElementById('btnBuyPremium');
+  if (window.Payments?.isEnabled()) {
+    btn.textContent = 'Pay ₹99/month with Razorpay';
+  } else {
+    btn.textContent = 'Upgrade Now — ₹99/month (Demo)';
+  }
+  document.getElementById('premiumModal').classList.remove('hidden');
+}
+function closePremium() { document.getElementById('premiumModal').classList.add('hidden'); }
+function buyPremium() {
+  const btn = document.getElementById('btnBuyPremium');
+  btn.disabled = true;
+  btn.textContent = 'Processing...';
+  window.Payments.buyPremium(user, saveUser, (ok, mode) => {
+    btn.disabled = false;
+    btn.textContent = window.Payments?.isEnabled()
+      ? 'Pay ₹99/month with Razorpay'
+      : 'Upgrade Now — ₹99/month (Demo)';
+    closePremium();
+    if (ok) {
+      alert(mode === 'paid' ? '🎉 Payment successful! Premium activated.' : '🎉 Premium activated (demo mode)!');
+      if (user) renderDashboard();
+    }
+  });
+}
+
+// ===== INIT =====
+async function initApp() {
+  document.body.insertAdjacentHTML('afterbegin',
+    '<div id="appLoader" class="fixed inset-0 bg-white z-[100] flex items-center justify-center"><div class="text-center"><div class="text-4xl mb-3">🇬🇧</div><p class="text-slate-500">Loading...</p></div></div>');
+
+  await loadLessons();
+
+  // Init Firebase if configured
+  const fbReady = await window.FirebaseApp?.init();
+  if (fbReady) {
+    window.FirebaseApp.onAuthChange(async (fbUser) => {
+      if (fbUser && !user?.uid) {
+        const doc = await window.FirebaseApp.loadUserDoc(fbUser.uid);
+        const local = loadUser();
+        user = window.FirebaseApp.mergeProfiles(fbUser, doc, local);
+        saveUser();
+      }
+    });
+    // Wait briefly for auth state
+    await new Promise(r => setTimeout(r, 500));
+    const fbUser = window.FirebaseApp.auth?.currentUser;
+    if (fbUser) {
+      const doc = await window.FirebaseApp.loadUserDoc(fbUser.uid);
+      user = window.FirebaseApp.mergeProfiles(fbUser, doc, loadUser());
+      saveUser();
+    } else {
+      loadUser();
+    }
+  } else {
+    loadUser();
+  }
+
+  document.getElementById('appLoader')?.remove();
+  PWA.init();
+  if (user) { showView('dashboard'); } else { showView('landing'); }
+}
+initApp();
+</script>
+</body>
+</html>

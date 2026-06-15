@@ -1,0 +1,13 @@
+{
+  "name": "english-in-100-days",
+  "version": "1.0.0",
+  "description": "Learn Spoken English in 100 Days for Indians",
+  "scripts": {
+    "dev": "npx serve mvp -p 3000",
+    "build": "node scripts/generate-config.js",
+    "lessons": "node scripts/generate-lessons.js",
+    "deploy": "npm run build && netlify deploy --dir=mvp --prod"
+  },
+  "keywords": ["english", "education", "india", "language-learning"],
+  "license": "UNLICENSED"
+}
