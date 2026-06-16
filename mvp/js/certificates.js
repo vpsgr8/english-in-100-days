@@ -126,13 +126,11 @@ const Certificates = (() => {
 
   function download(type) {
     if (!window.user) return;
-    const name = window.user.name || 'Learner';
-    if (!isPremiumUser?.() && type !== 'day_30') {
-      if (confirm('60 & 100-day certificates are Premium features. Upgrade now?')) {
-        showPremium?.();
-      }
+    if (!window.GuestAccess?.canLearn(window.user)) {
+      showPremium?.();
       return;
     }
+    const name = window.user.name || 'Learner';
     generate(type, name, window.user);
   }
 

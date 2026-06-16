@@ -6,14 +6,24 @@ const crypto = require('crypto');
 
 admin.initializeApp();
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
-const rzp = new Razorpay({
-  key_id: process.env.RAZORPAY_KEY_ID,
-  key_secret: process.env.RAZORPAY_KEY_SECRET
-});
-
 const region = functions.region('asia-south1');
+
+function getOpenAI() {
+  const apiKey = process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    throw new functions.https.HttpsError('failed-precondition', 'OPENAI_API_KEY not configured.');
+  }
+  return new OpenAI({ apiKey });
+}
+
+function getRazorpay() {
+  const key_id = process.env.RAZORPAY_KEY_ID;
+  const key_secret = process.env.RAZORPAY_KEY_SECRET;
+  if (!key_id || !key_secret) {
+    throw new functions.https.HttpsError('failed-precondition', 'Razorpay keys not configured.');
+  }
+  return new Razorpay({ key_id, key_secret });
+}
 
 const SYSTEM_PROMPT = `You are a friendly English teacher for Indian learners.
 Teach spoken English practically. Use simple sentences.
@@ -26,7 +36,7 @@ exports.chatTeacher = region.https.onCall(async (data, context) => {
   const { message, currentDay, learningGoal } = data;
   if (!message) throw new functions.https.HttpsError('invalid-argument', 'Message required.');
 
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAI().chat.completions.create({
     model: 'gpt-4o-mini',
     messages: [
       { role: 'system', content: `${SYSTEM_PROMPT} User goal: ${learningGoal || 'general'}. Current lesson day: ${currentDay || 1}.` },
@@ -48,7 +58,7 @@ exports.englishBuddy = region.https.onCall(async (data, context) => {
   const langMap = { hindi: 'Hindi', bengali: 'Bengali', tamil: 'Tamil', telugu: 'Telugu' };
   const lang = langMap[nativeLanguage] || 'Hindi';
 
-  const response = await openai.chat.completions.create({
+  const response = await getOpenAI().chat.completions.create({
     model: 'gpt-4o-mini',
     messages: [
       { role: 'system', content: `Translate ${lang} to natural spoken English for Indian learners. Return JSON only: {"english":"","meaning":"","phonetic":"","practice":""}. phonetic = simple pronunciation guide. practice = a sentence starting with "Say:"` },
@@ -65,7 +75,7 @@ exports.createRazorpayOrder = region.https.onCall(async (data, context) => {
   if (!context.auth) throw new functions.https.HttpsError('unauthenticated', 'Login required.');
 
   const amount = data.amount || 9900;
-  const order = await rzp.orders.create({
+  const order = await getRazorpay().orders.create({
     amount,
     currency: data.currency || 'INR',
     receipt: `prem_${context.auth.uid.slice(0, 8)}_${Date.now()}`,

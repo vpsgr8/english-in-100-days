@@ -33,6 +33,19 @@ git push
 
 ---
 
-## Firebase (optional)
+## Firebase on live site (optional)
 
-Add authorized domain: `vpsgr8.github.io`
+Guest mode works **without Firebase**. To enable Google/Email sign-in:
+
+1. Create project at [console.firebase.google.com](https://console.firebase.google.com)
+2. Add authorized domain: `vpsgr8.github.io`
+3. GitHub repo → **Settings → Secrets → Actions** → add:
+   - `VITE_FIREBASE_API_KEY`
+   - `VITE_FIREBASE_AUTH_DOMAIN`
+   - `VITE_FIREBASE_PROJECT_ID`
+   - `VITE_FIREBASE_STORAGE_BUCKET`
+   - `VITE_FIREBASE_MESSAGING_SENDER_ID`
+   - `VITE_FIREBASE_APP_ID`
+4. Push any commit → workflow rebuilds with Firebase enabled
+
+See `docs/FIREBASE_PRODUCTION.md` for full setup.

@@ -1,5 +1,5 @@
 /**
- * AI Service — OpenAI via Firebase Cloud Functions with local fallbacks
+ * AI Service — local fallbacks (no backend required)
  */
 const AIService = (() => {
   const CHAT_FALLBACKS = {
@@ -17,12 +17,6 @@ const AIService = (() => {
     'आप कैसे हैं': { en: 'How are you?', meaning: 'A common greeting', phonetic: 'how ar YOO', practice: 'Say: How are you?' }
   };
 
-  function canUseCloudAI() {
-    return window.FirebaseApp?.ready &&
-      window.FirebaseApp.auth?.currentUser &&
-      window.APP_CONFIG?.firebaseEnabled;
-  }
-
   function localChatFallback(message) {
     const lower = message.toLowerCase();
     if (lower.includes('introduce') || lower.includes('myself')) return CHAT_FALLBACKS.introduce;
@@ -37,52 +31,22 @@ const AIService = (() => {
     }
     return {
       en: 'I want to learn English speaking.',
-      meaning: 'Sign in with Firebase to unlock full AI Hindi translation.',
+      meaning: 'Try typing a common Hindi phrase from the examples.',
       phonetic: 'I want to lern ENG-lish SPEE-king',
       practice: 'Say: I want to learn English speaking.',
-      source: 'demo'
+      source: 'local'
     };
   }
 
   async function chatTeacher(message) {
-    const u = window.user;
-    if (canUseCloudAI()) {
-      try {
-        const data = await window.FirebaseApp.callFunction('chatTeacher', {
-          message,
-          currentDay: u?.currentDay || 1,
-          learningGoal: u?.goal || 'daily'
-        });
-        return { reply: data.reply, source: 'openai' };
-      } catch (e) {
-        console.warn('AI chat fallback:', e.message);
-      }
-    }
     return { reply: localChatFallback(message), source: 'local' };
   }
 
   async function englishBuddy(text) {
-    if (canUseCloudAI()) {
-      try {
-        const data = await window.FirebaseApp.callFunction('englishBuddy', {
-          hindiText: text,
-          nativeLanguage: window.user?.nativeLanguage || 'hindi'
-        });
-        return {
-          en: data.english || data.en || '',
-          meaning: data.meaning || '',
-          phonetic: data.phonetic || '',
-          practice: data.practice || ('Say: ' + (data.english || data.en)),
-          source: 'openai'
-        };
-      } catch (e) {
-        console.warn('English Buddy fallback:', e.message);
-      }
-    }
     return { ...localBuddyFallback(text), source: 'local' };
   }
 
-  return { chatTeacher, englishBuddy, canUseCloudAI };
+  return { chatTeacher, englishBuddy };
 })();
 
 if (typeof window !== 'undefined') window.AIService = AIService;

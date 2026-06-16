@@ -70,13 +70,13 @@
       <h1 class="text-4xl md:text-5xl font-extrabold mb-4 leading-tight">Learn Spoken English<br>in <span class="text-accent-400">100 Days</span></h1>
       <p class="text-brand-100 text-lg max-w-2xl mx-auto mb-8">Listen → Speak → Understand → Grammar. Just 5 minutes a day. No grammar-first boredom.</p>
       <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <button onclick="showView('auth')" class="bg-accent-500 hover:bg-accent-600 text-white font-semibold px-8 py-3 rounded-xl shadow-lg">Start Free — Day 1</button>
+        <button onclick="showView('auth')" class="bg-accent-500 hover:bg-accent-600 text-white font-semibold px-8 py-3 rounded-xl shadow-lg">Start 3-Day Free Trial</button>
         <button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})" class="bg-white/10 hover:bg-white/20 border border-white/30 px-8 py-3 rounded-xl">See Features</button>
       </div>
       <div class="flex justify-center gap-8 mt-10 text-sm text-brand-200">
-        <div><span class="block text-2xl font-bold text-white">5 min</span>Daily Lesson</div>
+        <div><span class="block text-2xl font-bold text-white">3 days</span>Free Trial</div>
         <div><span class="block text-2xl font-bold text-white">100</span>Days Program</div>
-        <div><span class="block text-2xl font-bold text-white">₹99</span>/month Premium</div>
+        <div><span class="block text-2xl font-bold text-white">₹99</span>/month after</div>
       </div>
     </div>
   </header>
@@ -122,28 +122,28 @@
       <h2 class="text-2xl font-bold mb-6">Simple Pricing</h2>
       <div class="grid sm:grid-cols-2 gap-6">
         <div class="bg-white p-6 rounded-2xl border-2 border-slate-200">
-          <h3 class="font-bold text-lg">Free</h3>
+          <h3 class="font-bold text-lg">3-Day Trial</h3>
           <p class="text-3xl font-extrabold my-2">₹0</p>
           <ul class="text-sm text-slate-600 text-left space-y-2 mt-4">
-            <li>✓ Daily 5-min lesson</li>
-            <li>✓ Word of the day</li>
-            <li>✓ Basic AI chat</li>
-            <li>✓ 3 speaking sessions/day</li>
+            <li>✓ Enter email to start</li>
+            <li>✓ Full access for 3 days</li>
+            <li>✓ Daily lessons &amp; speaking</li>
+            <li>✓ All practice features</li>
           </ul>
         </div>
         <div class="bg-white p-6 rounded-2xl border-2 border-brand-500 relative">
-          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent-500 text-white text-xs font-bold px-3 py-1 rounded-full">POPULAR</span>
-          <h3 class="font-bold text-lg text-brand-700">Premium</h3>
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-xs px-3 py-1 rounded-full">After trial</span>
+          <h3 class="font-bold text-lg">Continue Learning</h3>
           <p class="text-3xl font-extrabold my-2">₹99<span class="text-base font-normal text-slate-500">/mo</span></p>
           <ul class="text-sm text-slate-600 text-left space-y-2 mt-4">
-            <li>✓ Unlimited AI speaking</li>
-            <li>✓ Interview practice</li>
-            <li>✓ All scenarios</li>
-            <li>✓ Certificates & analytics</li>
+            <li>✓ Keep your progress</li>
+            <li>✓ All 100 days of lessons</li>
+            <li>✓ Pay via Razorpay</li>
+            <li>✓ Certificates included</li>
           </ul>
         </div>
       </div>
-      <button onclick="showView('auth')" class="mt-8 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-xl">Get Started Free</button>
+      <button onclick="showView('auth')" class="mt-8 bg-brand-600 hover:bg-brand-700 text-white font-semibold px-8 py-3 rounded-xl">Start 3-Day Free Trial</button>
     </div>
   </section>
 
@@ -260,26 +260,11 @@
   <div class="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-brand-50 to-slate-100">
     <div class="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl border">
       <h2 class="text-2xl font-bold text-center mb-2">Welcome! 👋</h2>
-      <p class="text-slate-500 text-center text-sm mb-6">Start your 100-day English journey</p>
-      <p id="authStatus" class="text-center text-sm text-slate-500 mb-4 hidden"></p>
-      <button id="btnGoogle" onclick="loginGoogle()" class="w-full flex items-center justify-center gap-2 border border-slate-300 hover:bg-slate-50 font-medium py-3 rounded-xl mb-4">
-        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt=""> Continue with Google
-      </button>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="flex-1 h-px bg-slate-200"></div>
-        <span class="text-xs text-slate-400">OR</span>
-        <div class="flex-1 h-px bg-slate-200"></div>
-      </div>
-      <label class="block text-sm font-medium mb-1">Email</label>
-      <input id="authEmail" type="email" placeholder="you@example.com" class="w-full border rounded-xl px-4 py-3 mb-3 focus:ring-2 focus:ring-brand-500 outline-none">
-      <label class="block text-sm font-medium mb-1">Password</label>
-      <input id="authPassword" type="password" placeholder="Min 6 characters" class="w-full border rounded-xl px-4 py-3 mb-3 focus:ring-2 focus:ring-brand-500 outline-none">
-      <button onclick="loginEmail()" class="w-full bg-slate-800 hover:bg-slate-900 text-white font-semibold py-3 rounded-xl mb-4">Sign In with Email</button>
-      <div class="flex items-center gap-3 mb-4">
-        <div class="flex-1 h-px bg-slate-200"></div>
-        <span class="text-xs text-slate-400">OR GUEST</span>
-        <div class="flex-1 h-px bg-slate-200"></div>
-      </div>
+      <p class="text-slate-500 text-center text-sm mb-6">3 days free — then ₹99/month to continue</p>
+      <p id="authStatus" class="text-center text-sm mb-4 hidden"></p>
+
+      <label class="block text-sm font-medium mb-1">Email <span class="text-red-500">*</span></label>
+      <input id="authEmail" type="email" placeholder="you@example.com" required class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none">
       <label class="block text-sm font-medium mb-1">Your Name</label>
       <input id="authName" type="text" placeholder="e.g. Vishal" class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none">
       <label class="block text-sm font-medium mb-1">Native Language</label>
@@ -297,9 +282,11 @@
         <option value="daily">Daily Life</option>
       </select>
       <label class="block text-sm font-medium mb-1">School Invite Code <span class="text-slate-400">(optional)</span></label>
-      <input id="authSchoolCode" type="text" placeholder="e.g. ENG4K2X" class="w-full border rounded-xl px-4 py-3 mb-6 focus:ring-2 focus:ring-brand-500 outline-none uppercase">
-      <button onclick="login()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-xl mb-3">Continue as Guest →</button>
-      <button onclick="showView('landing')" class="w-full text-slate-500 text-sm py-2">← Back to home</button>
+      <input id="authSchoolCode" type="text" placeholder="e.g. ENG4K2X" class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none uppercase">
+      <button onclick="login()" class="w-full bg-brand-600 hover:bg-brand-700 text-white font-semibold py-3 rounded-xl text-lg mb-4">Start Free Trial — Day 1 →</button>
+      <p id="authGuestNote" class="text-xs text-center text-slate-400 mb-4">3-day free trial • Progress saved on this device</p>
+
+      <button onclick="showView('landing')" class="w-full text-slate-500 text-sm py-2 mt-2">← Back to home</button>
     </div>
   </div>
 </div>
@@ -307,7 +294,7 @@
 <!-- DASHBOARD -->
 <div id="view-dashboard" class="view">
   <div class="max-w-5xl mx-auto px-4 py-8">
-    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-4">
       <div>
         <h1 class="text-2xl font-bold">Hello, <span id="dashName">Learner</span>! 👋</h1>
         <p class="text-slate-500 text-sm">Day <span id="dashDay">1</span> of 100 • Keep your streak alive!</p>
@@ -323,6 +310,8 @@
         </div>
       </div>
     </div>
+
+    <div id="trialBanner" class="hidden mb-6 rounded-2xl px-5 py-4 text-sm font-medium"></div>
 
     <!-- Word of Day -->
     <div id="wotdCard" class="bg-gradient-to-r from-accent-500 to-orange-500 text-white p-6 rounded-2xl mb-6 shadow-lg"></div>
@@ -503,8 +492,8 @@
 <!-- PREMIUM MODAL -->
 <div id="premiumModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
   <div class="bg-white rounded-2xl p-8 max-w-md w-full">
-    <h2 class="text-2xl font-bold mb-2">⭐ Go Premium</h2>
-    <p class="text-slate-500 text-sm mb-6">Unlock unlimited speaking, all scenarios, and certificates.</p>
+    <h2 class="text-2xl font-bold mb-2">Continue Learning</h2>
+    <p class="text-slate-500 text-sm mb-6">Your 3-day free trial has ended. Pay ₹99/month to keep going.</p>
     <p class="text-4xl font-extrabold text-brand-700 mb-6">₹99<span class="text-base font-normal text-slate-500">/month</span></p>
     <ul class="text-sm space-y-2 mb-6">
       <li>✅ Unlimited AI speaking practice</li>
@@ -519,11 +508,7 @@
 
 <script src="config.js"></script>
 <script src="config.local.js" onerror=""></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-functions-compat.js"></script>
-<script src="js/firebase-auth.js"></script>
+<script src="js/guest-access.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="js/razorpay-pay.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -591,9 +576,6 @@ function loadUser() {
 function saveUser() {
   window.user = user;
   localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
-  if (user?.uid && window.FirebaseApp?.ready) {
-    window.FirebaseApp.saveUserDoc(user.uid, window.FirebaseApp.toFirestore(user)).catch(console.warn);
-  }
 }
 
 function defaultUser(name, lang, goal, extras = {}) {
@@ -614,11 +596,28 @@ function setAuthStatus(msg, isError) {
 }
 
 function isPremiumUser() {
-  return window.Payments?.isPremium(user) || user?.plan === 'premium';
+  return window.GuestAccess?.isPaid(user) || window.Payments?.isPremium(user);
 }
+
+function canLearn() {
+  return window.GuestAccess?.canLearn(user);
+}
+
+function requireLearningAccess() {
+  if (!user) { showView('auth'); return false; }
+  if (canLearn()) return true;
+  showPremium();
+  return false;
+}
+
+const LEARNING_VIEWS = ['lesson', 'speaking', 'scenarios', 'games', 'buddy', 'chat'];
 
 // ===== ROUTING =====
 function showView(id) {
+  if (LEARNING_VIEWS.includes(id) && user && !canLearn()) {
+    showPremium();
+    return;
+  }
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('view-' + id).classList.add('active');
   const nav = document.getElementById('mainNav');
@@ -646,66 +645,27 @@ function shareWordOfDay() {
 
 // ===== AUTH =====
 function login() {
+  const email = document.getElementById('authEmail').value.trim();
   const name = document.getElementById('authName').value.trim() || 'Learner';
   const lang = document.getElementById('authLang').value;
   const goal = document.getElementById('authGoal').value;
   const schoolCode = document.getElementById('authSchoolCode')?.value.trim().toUpperCase() || '';
-  user = defaultUser(name, lang, goal, schoolCode ? { schoolCode, plan: 'school' } : {});
-  saveUser();
-  showView('dashboard');
-}
 
-async function loginGoogle() {
-  if (!window.FirebaseApp?.isEnabled()) {
-    setAuthStatus('Firebase not configured. Use Guest mode or add keys to config.local.js', true);
+  if (!window.GuestAccess.isValidEmail(email)) {
+    setAuthStatus('Please enter a valid email address', true);
     return;
   }
-  setAuthStatus('Signing in with Google...');
-  try {
-    const fbUser = await window.FirebaseApp.signInWithGoogle();
-    await completeFirebaseLogin(fbUser);
-  } catch (e) {
-    setAuthStatus(e.message || 'Google sign-in failed', true);
-  }
-}
 
-async function loginEmail() {
-  if (!window.FirebaseApp?.isEnabled()) {
-    setAuthStatus('Firebase not configured. Use Guest mode or add keys to config.local.js', true);
-    return;
-  }
-  const email = document.getElementById('authEmail').value.trim();
-  const password = document.getElementById('authPassword').value;
-  if (!email || password.length < 6) {
-    setAuthStatus('Enter email and password (min 6 chars)', true);
-    return;
-  }
-  setAuthStatus('Signing in...');
-  try {
-    const fbUser = await window.FirebaseApp.signInWithEmail(email, password);
-    await completeFirebaseLogin(fbUser);
-  } catch (e) {
-    setAuthStatus(e.message || 'Email sign-in failed', true);
-  }
-}
-
-async function completeFirebaseLogin(fbUser) {
-  const lang = document.getElementById('authLang').value;
-  const goal = document.getElementById('authGoal').value;
-  const name = document.getElementById('authName').value.trim() || fbUser.displayName || 'Learner';
-  let doc = await window.FirebaseApp.loadUserDoc(fbUser.uid);
-  if (!doc) doc = await window.FirebaseApp.createUserProfile(fbUser, { name, nativeLanguage: lang, learningGoal: goal });
-  const local = loadUser();
-  user = window.FirebaseApp.mergeProfiles(fbUser, doc, local);
-  if (!user.name || user.name === 'Learner') user.name = name;
+  const trial = window.GuestAccess.startTrial(email);
+  const extras = { ...trial, ...(schoolCode ? { schoolCode, plan: 'school' } : {}) };
+  user = defaultUser(name, lang, goal, extras);
   saveUser();
   setAuthStatus('');
   showView('dashboard');
 }
 
-async function logout() {
-  if (!confirm('Logout? Your progress is saved.')) return;
-  if (window.FirebaseApp?.ready) await window.FirebaseApp.signOut();
+function logout() {
+  if (!confirm('Logout? Your progress is saved on this device.')) return;
   user = null;
   localStorage.removeItem(STORAGE_KEY);
   showView('landing');
@@ -716,10 +676,25 @@ function renderDashboard() {
   if (!user) { showView('auth'); return; }
   const day = user.currentDay;
   const lesson = LESSONS[String(day)] || LESSONS['1'];
+  const status = window.GuestAccess.statusLabel(user);
   document.getElementById('dashName').textContent = user.name;
   document.getElementById('dashDay').textContent = day;
   document.getElementById('dashStreak').textContent = user.streak;
   document.getElementById('dashXP').textContent = user.xp;
+
+  const banner = document.getElementById('trialBanner');
+  if (status.type === 'trial') {
+    banner.className = 'mb-6 rounded-2xl px-5 py-4 text-sm font-medium bg-brand-50 border border-brand-200 text-brand-800';
+    banner.textContent = status.text + ' — enjoy full access!';
+    banner.classList.remove('hidden');
+  } else if (status.type === 'expired') {
+    banner.className = 'mb-6 rounded-2xl px-5 py-4 text-sm font-medium bg-orange-50 border border-orange-200 text-orange-900';
+    banner.innerHTML = status.text + ' — <button onclick="showPremium()" class="underline font-semibold">Pay ₹99/month to continue</button>';
+    banner.classList.remove('hidden');
+  } else {
+    banner.classList.add('hidden');
+  }
+
   if (isPremiumUser()) {
     document.getElementById('dashName').innerHTML = user.name + ' <span class="text-xs bg-accent-100 text-accent-700 px-2 py-0.5 rounded-full">⭐ Premium</span>';
   }
@@ -745,7 +720,7 @@ function renderDashboard() {
 
 // ===== LESSON =====
 function startLesson() {
-  if (!user) return;
+  if (!requireLearningAccess()) return;
   currentLesson = LESSONS[String(user.currentDay)] || LESSONS['1'];
   lessonStep = 0;
   quizAnswers = [];
@@ -882,8 +857,7 @@ function initRecognition() {
 }
 
 function toggleMic() {
-  if (!user) return;
-  if (!isPremiumUser() && user.dailySpeaking >= 3) { showPremium(); return; }
+  if (!requireLearningAccess()) return;
   const btn = document.getElementById('micBtn');
   if (micActive) { recognition?.stop(); return; }
   recognition = initRecognition();
@@ -1047,10 +1021,12 @@ function checkGame(answer) {
 // ===== PREMIUM =====
 function showPremium() {
   const btn = document.getElementById('btnBuyPremium');
-  if (window.Payments?.isEnabled()) {
+  if (window.Payments?.hasCheckoutKey?.()) {
     btn.textContent = 'Pay ₹99/month with Razorpay';
+  } else if (window.Payments?.hasPaymentLink?.()) {
+    btn.textContent = 'Pay ₹99 via Razorpay →';
   } else {
-    btn.textContent = 'Upgrade Now — ₹99/month (Demo)';
+    btn.textContent = 'Unlock — ₹99/month (Demo)';
   }
   document.getElementById('premiumModal').classList.remove('hidden');
 }
@@ -1061,12 +1037,15 @@ function buyPremium() {
   btn.textContent = 'Processing...';
   window.Payments.buyPremium(user, saveUser, (ok, mode) => {
     btn.disabled = false;
-    btn.textContent = window.Payments?.isEnabled()
-      ? 'Pay ₹99/month with Razorpay'
-      : 'Upgrade Now — ₹99/month (Demo)';
+    if (window.Payments?.hasCheckoutKey?.()) btn.textContent = 'Pay ₹99/month with Razorpay';
+    else if (window.Payments?.hasPaymentLink?.()) btn.textContent = 'Pay ₹99 via Razorpay →';
+    else btn.textContent = 'Unlock — ₹99/month (Demo)';
     closePremium();
     if (ok) {
-      alert(mode === 'paid' ? '🎉 Payment successful! Premium activated.' : '🎉 Premium activated (demo mode)!');
+      const msg = mode === 'paid' || mode === 'link'
+        ? '🎉 Payment successful! You can continue learning.'
+        : '🎉 Unlocked (demo mode)!';
+      alert(msg);
       if (user) renderDashboard();
     }
   });
@@ -1078,30 +1057,18 @@ async function initApp() {
     '<div id="appLoader" class="fixed inset-0 bg-white z-[100] flex items-center justify-center"><div class="text-center"><div class="text-4xl mb-3">🇬🇧</div><p class="text-slate-500">Loading...</p></div></div>');
 
   await loadLessons();
+  user = loadUser();
+  if (user) {
+    user = window.GuestAccess.migrateUser(user);
+    saveUser();
+  }
 
-  // Init Firebase if configured
-  const fbReady = await window.FirebaseApp?.init();
-  if (fbReady) {
-    window.FirebaseApp.onAuthChange(async (fbUser) => {
-      if (fbUser && !user?.uid) {
-        const doc = await window.FirebaseApp.loadUserDoc(fbUser.uid);
-        const local = loadUser();
-        user = window.FirebaseApp.mergeProfiles(fbUser, doc, local);
-        saveUser();
-      }
-    });
-    // Wait briefly for auth state
-    await new Promise(r => setTimeout(r, 500));
-    const fbUser = window.FirebaseApp.auth?.currentUser;
-    if (fbUser) {
-      const doc = await window.FirebaseApp.loadUserDoc(fbUser.uid);
-      user = window.FirebaseApp.mergeProfiles(fbUser, doc, loadUser());
-      saveUser();
-    } else {
-      loadUser();
-    }
-  } else {
-    loadUser();
+  // Unlock if returning from Razorpay payment link redirect
+  const params = new URLSearchParams(location.search);
+  if (params.get('paid') === '1' && user) {
+    window.Payments.unlockPremium(user, params.get('payment_id') || 'redirect');
+    saveUser();
+    history.replaceState({}, '', location.pathname);
   }
 
   document.getElementById('appLoader')?.remove();

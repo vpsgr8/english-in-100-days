@@ -1,4 +1,4 @@
-const CACHE = 'ei100d-v2';
+const CACHE = 'ei100d-v3';
 const BASE = new URL('./', self.location).href;
 
 const ASSETS = [
@@ -7,7 +7,7 @@ const ASSETS = [
   'lessons.json',
   'config.js',
   'manifest.json',
-  'js/firebase-auth.js',
+  'js/guest-access.js',
   'js/razorpay-pay.js',
   'js/ai-service.js',
   'js/certificates.js',

@@ -1,7 +1,8 @@
 # Secrets — never commit
 .env
-# Generated locally by npm run build — optional commit for GitHub Pages without secrets
-# mvp/config.local.js
+firebase/functions/.env
+# Generated locally — do not commit (use GitHub Secrets for production)
+mvp/config.local.js
 
 # OS
 .DS_Store

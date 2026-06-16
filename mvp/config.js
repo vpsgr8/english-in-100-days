@@ -1,36 +1,22 @@
 /**
- * App configuration — fill in your Firebase & Razorpay keys before production.
- * Copy this file to config.local.js and override values (gitignore config.local.js).
+ * App configuration — Razorpay keys for payments after free trial.
  */
 const APP_CONFIG = {
-  // Set to true after adding Firebase credentials below
-  firebaseEnabled: false,
+  // Free trial length (days)
+  trialDays: 3,
 
-  firebase: {
-    apiKey: '',
-    authDomain: '',
-    projectId: '',
-    storageBucket: '',
-    messagingSenderId: '',
-    appId: ''
-  },
-
-  // Set to true after adding Razorpay test/live key
-  razorpayEnabled: false,
-
-  // Client-side key only (rzp_test_... or rzp_live_...)
+  // Razorpay Checkout (optional — needs key from dashboard.razorpay.com)
+  razorpayEnabled: true,
   razorpayKeyId: '',
 
-  // Premium plan pricing (paise — 9900 = ₹99)
+  // Razorpay Payment Link (works without API keys — your razorpay.me link)
+  razorpayPaymentLink: 'https://razorpay.me/@vishalpratapsingh601',
+
   premiumAmount: 9900,
   premiumCurrency: 'INR',
-  premiumPlanName: 'English in 100 Days Premium',
-  premiumDescription: 'Unlimited AI speaking, all scenarios, certificates',
+  premiumPlanName: 'English in 100 Days',
+  premiumDescription: 'Continue learning after your 3-day free trial',
 
-  // Cloud Function region (for createOrder)
-  functionsRegion: 'asia-south1',
-
-  // Auto-detected: '' for root, '/repo-name/' for GitHub Pages project sites
   basePath: (function () {
     if (typeof location === 'undefined') return '/';
     const p = location.pathname;
@@ -44,7 +30,6 @@ function assetPath(path) {
   return base + String(path).replace(/^\//, '');
 }
 
-// Optional local overrides (create mvp/config.local.js)
 if (typeof window !== 'undefined') {
   window.APP_CONFIG = APP_CONFIG;
   window.assetPath = assetPath;
