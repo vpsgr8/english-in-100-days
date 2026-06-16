@@ -16,6 +16,19 @@ const APP_CONFIG = {
   premiumPlanName: 'English in 100 Days',
   premiumDescription: 'Monthly subscription — continue after 3-day free trial',
 
+  // Google AdSense (https://adsense.google.com → Account → Settings)
+  adsenseEnabled: true,
+  adsenseClientId: 'ca-pub-5121623665404680',
+  adsenseBannerSlot: '',
+
+  // Amazon Associates India
+  amazonAffiliateTag: 'glamstore072-21',
+  amazonDomain: 'amazon.in',
+
+  companyName: 'MarketMind Labs',
+  contactEmail: 'mml.products26@gmail.com',
+  siteUrl: 'https://vpsgr8.github.io/',
+
   basePath: (function () {
     if (typeof location === 'undefined') return '/';
     const p = location.pathname;

@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Sync to vpsgr8.github.io
 
 on:
   push:
@@ -7,15 +7,9 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
-
-concurrency:
-  group: pages
-  cancel-in-progress: true
 
 jobs:
-  deploy:
+  deploy-user-site:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -31,13 +25,14 @@ jobs:
           VITE_ADSENSE_CLIENT_ID: ${{ secrets.VITE_ADSENSE_CLIENT_ID }}
           VITE_ADSENSE_BANNER_SLOT: ${{ secrets.VITE_ADSENSE_BANNER_SLOT }}
 
-      - name: Add .nojekyll for GitHub Pages
+      - name: Add .nojekyll
         run: touch mvp/.nojekyll
 
-      # Publishes mvp/ folder to gh-pages branch (site root = app)
-      - name: Deploy app to gh-pages branch
+      - name: Deploy to vpsgr8.github.io (main)
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          personal_token: ${{ secrets.DEPLOY_TOKEN }}
+          external_repository: vpsgr8/vpsgr8.github.io
+          publish_branch: main
           publish_dir: ./mvp
           force_orphan: true
