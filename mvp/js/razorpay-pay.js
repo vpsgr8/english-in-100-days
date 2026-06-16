@@ -1,16 +1,28 @@
 /**
- * Razorpay checkout — client-only (no Firebase backend)
+ * Razorpay checkout — fixed ₹299/month (no manual amount entry)
  */
 const Payments = (() => {
-  const PREMIUM_AMOUNT = () => window.APP_CONFIG?.premiumAmount || 9900;
+  const PREMIUM_AMOUNT = () => window.APP_CONFIG?.premiumAmount || 29900;
+
+  function premiumPriceRupees() {
+    return (PREMIUM_AMOUNT() / 100).toLocaleString('en-IN');
+  }
 
   function hasCheckoutKey() {
     const c = window.APP_CONFIG;
     return c?.razorpayEnabled && c?.razorpayKeyId && typeof Razorpay !== 'undefined';
   }
 
+  /** Reject razorpay.me/@profile links — those ask users to type any amount. */
+  function isFixedPaymentLink(link) {
+    if (!link || typeof link !== 'string') return false;
+    const trimmed = link.trim();
+    if (/razorpay\.me\/@[^/]+$/i.test(trimmed)) return false;
+    return /rzp\.io\/|pages\.razorpay\.com|razorpay\.com\/payment-link|razorpay\.com\/pl_/i.test(trimmed);
+  }
+
   function hasPaymentLink() {
-    return Boolean(window.APP_CONFIG?.razorpayPaymentLink);
+    return isFixedPaymentLink(window.APP_CONFIG?.razorpayPaymentLink);
   }
 
   function isEnabled() {
@@ -32,26 +44,17 @@ const Payments = (() => {
     if (paymentId) user.razorpayPaymentId = paymentId;
   }
 
-  function createOrder() {
-    return {
-      orderId: null,
-      amount: PREMIUM_AMOUNT(),
-      currency: 'INR',
-      keyId: window.APP_CONFIG.razorpayKeyId
-    };
-  }
-
-  function openCheckout(orderData, user, onSuccess) {
+  function openCheckout(user, onSuccess) {
     const cfg = window.APP_CONFIG;
+    const amount = PREMIUM_AMOUNT();
     const options = {
-      key: orderData.keyId || cfg.razorpayKeyId,
-      amount: orderData.amount,
-      currency: orderData.currency || 'INR',
+      key: cfg.razorpayKeyId,
+      amount,
+      currency: cfg.premiumCurrency || 'INR',
       name: cfg.premiumPlanName || 'English in 100 Days',
-      description: cfg.premiumDescription || 'Continue learning after free trial',
-      order_id: orderData.orderId || undefined,
-      prefill: { name: user?.name || '', email: user?.email || '' },
-      notes: { email: user?.email || '', plan: 'premium_monthly' },
+      description: `${cfg.premiumDescription || 'Monthly subscription'} — ₹${premiumPriceRupees()}`,
+      prefill: { name: user?.name || '', email: user?.email || '', contact: user?.phone || '' },
+      notes: { email: user?.email || '', phone: user?.phone || '', plan: 'premium_monthly', amount_inr: premiumPriceRupees() },
       theme: { color: '#2563eb' },
       handler(response) { onSuccess(response); },
       modal: { ondismiss() {} }
@@ -63,13 +66,22 @@ const Payments = (() => {
     rzp.open();
   }
 
-  function openPaymentLink(user) {
-    const link = window.APP_CONFIG.razorpayPaymentLink;
+  function openFixedPaymentLink(user) {
+    const link = window.APP_CONFIG.razorpayPaymentLink.trim();
     const url = new URL(link);
     if (user?.email) url.searchParams.set('email', user.email);
     window.open(url.toString(), '_blank', 'noopener');
     return confirm(
-      'Complete ₹99 payment in the Razorpay window.\n\nAfter paying, click OK to unlock your account and continue learning.'
+      `Complete the ₹${premiumPriceRupees()} payment in Razorpay.\n\nAfter paying, click OK to unlock your account.`
+    );
+  }
+
+  function paymentSetupError() {
+    alert(
+      'Online payment is not fully configured yet.\n\n' +
+      'Add your Razorpay Key ID (rzp_live_... or rzp_test_...) in config so customers pay exactly ₹' +
+      premiumPriceRupees() + ' — no manual amount entry.\n\n' +
+      'Get keys: dashboard.razorpay.com → Settings → API Keys'
     );
   }
 
@@ -80,6 +92,11 @@ const Payments = (() => {
     }
 
     if (!isEnabled()) {
+      if (window.APP_CONFIG?.razorpayPaymentLink?.includes('razorpay.me/@')) {
+        paymentSetupError();
+        onComplete?.(false);
+        return;
+      }
       unlockPremium(user);
       saveUserFn();
       onComplete?.(true, 'demo');
@@ -88,8 +105,7 @@ const Payments = (() => {
 
     try {
       if (hasCheckoutKey()) {
-        const order = createOrder();
-        openCheckout(order, user, (response) => {
+        openCheckout(user, (response) => {
           unlockPremium(user, response.razorpay_payment_id);
           saveUserFn();
           onComplete?.(true, 'paid');
@@ -98,7 +114,7 @@ const Payments = (() => {
       }
 
       if (hasPaymentLink()) {
-        const confirmed = openPaymentLink(user);
+        const confirmed = openFixedPaymentLink(user);
         if (confirmed) {
           unlockPremium(user, 'link_' + Date.now());
           saveUserFn();
@@ -113,7 +129,24 @@ const Payments = (() => {
     }
   }
 
-  return { isEnabled, isPremium, buyPremium, unlockPremium, hasPaymentLink, hasCheckoutKey };
+  function payButtonLabel() {
+    if (hasCheckoutKey() || hasPaymentLink()) {
+      return `Pay ₹${premiumPriceRupees()}/month`;
+    }
+    return `Unlock — ₹${premiumPriceRupees()}/month`;
+  }
+
+  return {
+    isEnabled,
+    isPremium,
+    buyPremium,
+    unlockPremium,
+    hasPaymentLink,
+    hasCheckoutKey,
+    premiumPriceRupees,
+    payButtonLabel,
+    paymentSetupError
+  };
 })();
 
 if (typeof window !== 'undefined') window.Payments = Payments;

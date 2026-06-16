@@ -17,7 +17,7 @@
   <meta property="og:site_name" content="English in 100 Days">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="English in 100 Days">
-  <meta name="twitter:description" content="Learn spoken English in 100 days — free to start, ₹99/month premium.">
+  <meta name="twitter:description" content="Learn spoken English in 100 days — 3-day free trial, then ₹299/month.">
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+Devanagari:wght@400;600&display=swap" rel="stylesheet">
   <script>
@@ -76,7 +76,7 @@
       <div class="flex justify-center gap-8 mt-10 text-sm text-brand-200">
         <div><span class="block text-2xl font-bold text-white">3 days</span>Free Trial</div>
         <div><span class="block text-2xl font-bold text-white">100</span>Days Program</div>
-        <div><span class="block text-2xl font-bold text-white">₹99</span>/month after</div>
+        <div><span class="block text-2xl font-bold text-white">₹299</span>/month after</div>
       </div>
     </div>
   </header>
@@ -125,7 +125,7 @@
           <h3 class="font-bold text-lg">3-Day Trial</h3>
           <p class="text-3xl font-extrabold my-2">₹0</p>
           <ul class="text-sm text-slate-600 text-left space-y-2 mt-4">
-            <li>✓ Enter email to start</li>
+            <li>✓ Email &amp; mobile to start</li>
             <li>✓ Full access for 3 days</li>
             <li>✓ Daily lessons &amp; speaking</li>
             <li>✓ All practice features</li>
@@ -134,7 +134,7 @@
         <div class="bg-white p-6 rounded-2xl border-2 border-brand-500 relative">
           <span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-brand-600 text-white text-xs px-3 py-1 rounded-full">After trial</span>
           <h3 class="font-bold text-lg">Continue Learning</h3>
-          <p class="text-3xl font-extrabold my-2">₹99<span class="text-base font-normal text-slate-500">/mo</span></p>
+          <p class="text-3xl font-extrabold my-2">₹299<span class="text-base font-normal text-slate-500">/mo</span></p>
           <ul class="text-sm text-slate-600 text-left space-y-2 mt-4">
             <li>✓ Keep your progress</li>
             <li>✓ All 100 days of lessons</li>
@@ -154,7 +154,7 @@
         <div><div class="text-3xl font-extrabold text-brand-600">100</div><div class="text-sm text-slate-500">Day Program</div></div>
         <div><div class="text-3xl font-extrabold text-brand-600">5 min</div><div class="text-sm text-slate-500">Daily Commitment</div></div>
         <div><div class="text-3xl font-extrabold text-brand-600">4</div><div class="text-sm text-slate-500">Indian Languages</div></div>
-        <div><div class="text-3xl font-extrabold text-brand-600">₹99</div><div class="text-sm text-slate-500">Premium / Month</div></div>
+        <div><div class="text-3xl font-extrabold text-brand-600">₹299</div><div class="text-sm text-slate-500">Per Month</div></div>
       </div>
     </div>
   </section>
@@ -216,7 +216,7 @@
     <div class="space-y-3">
       <details class="bg-white border rounded-xl p-4 group">
         <summary class="font-semibold cursor-pointer">Is it really free to start?</summary>
-        <p class="text-slate-600 text-sm mt-3">Yes! Daily lessons, Word of the Day, basic AI chat, and 3 speaking sessions per day are free forever. Premium (₹99/month) unlocks unlimited speaking, all scenarios, and certificates.</p>
+        <p class="text-slate-600 text-sm mt-3">Start with a 3-day free trial. After that, continue for ₹299/month via Razorpay (fixed amount — no manual entry).</p>
       </details>
       <details class="bg-white border rounded-xl p-4">
         <summary class="font-semibold cursor-pointer">Do I need to know grammar first?</summary>
@@ -260,11 +260,13 @@
   <div class="min-h-screen flex items-center justify-center px-4 py-12 bg-gradient-to-br from-brand-50 to-slate-100">
     <div class="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl border">
       <h2 class="text-2xl font-bold text-center mb-2">Welcome! 👋</h2>
-      <p class="text-slate-500 text-center text-sm mb-6">3 days free — then ₹99/month to continue</p>
+      <p class="text-slate-500 text-center text-sm mb-6">3 days free — then ₹299/month to continue</p>
       <p id="authStatus" class="text-center text-sm mb-4 hidden"></p>
 
       <label class="block text-sm font-medium mb-1">Email <span class="text-red-500">*</span></label>
       <input id="authEmail" type="email" placeholder="you@example.com" required class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none">
+      <label class="block text-sm font-medium mb-1">Mobile Number <span class="text-red-500">*</span></label>
+      <input id="authMobile" type="tel" inputmode="numeric" placeholder="e.g. 9876543210" maxlength="14" required class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none">
       <label class="block text-sm font-medium mb-1">Your Name</label>
       <input id="authName" type="text" placeholder="e.g. Vishal" class="w-full border rounded-xl px-4 py-3 mb-4 focus:ring-2 focus:ring-brand-500 outline-none">
       <label class="block text-sm font-medium mb-1">Native Language</label>
@@ -365,7 +367,7 @@
       <button onclick="showPremium()" class="bg-white border rounded-2xl p-4 text-left card-hover border-accent-300">
         <div class="text-2xl mb-2">⭐</div>
         <div class="font-semibold text-sm text-accent-600">Go Premium</div>
-        <div class="text-xs text-slate-500">₹99/month</div>
+        <div class="text-xs text-slate-500">₹299/month</div>
       </button>
     </div>
   </div>
@@ -493,15 +495,15 @@
 <div id="premiumModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center p-4">
   <div class="bg-white rounded-2xl p-8 max-w-md w-full">
     <h2 class="text-2xl font-bold mb-2">Continue Learning</h2>
-    <p class="text-slate-500 text-sm mb-6">Your 3-day free trial has ended. Pay ₹99/month to keep going.</p>
-    <p class="text-4xl font-extrabold text-brand-700 mb-6">₹99<span class="text-base font-normal text-slate-500">/month</span></p>
+    <p id="premiumModalDesc" class="text-slate-500 text-sm mb-6">Your 3-day free trial has ended. Pay to keep going.</p>
+    <p class="text-4xl font-extrabold text-brand-700 mb-6">₹<span id="premiumPrice">299</span><span class="text-base font-normal text-slate-500">/month</span></p>
     <ul class="text-sm space-y-2 mb-6">
       <li>✅ Unlimited AI speaking practice</li>
       <li>✅ All interview & travel scenarios</li>
       <li>✅ Progress analytics</li>
       <li>✅ Completion certificates</li>
     </ul>
-    <button id="btnBuyPremium" onclick="buyPremium()" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 rounded-xl mb-2">Upgrade Now — ₹99/month</button>
+    <button id="btnBuyPremium" onclick="buyPremium()" class="w-full bg-accent-500 hover:bg-accent-600 text-white font-semibold py-3 rounded-xl mb-2">Pay ₹299/month</button>
     <button onclick="closePremium()" class="w-full text-slate-500 text-sm py-2">Maybe later</button>
   </div>
 </div>
@@ -646,6 +648,7 @@ function shareWordOfDay() {
 // ===== AUTH =====
 function login() {
   const email = document.getElementById('authEmail').value.trim();
+  const mobile = document.getElementById('authMobile').value.trim();
   const name = document.getElementById('authName').value.trim() || 'Learner';
   const lang = document.getElementById('authLang').value;
   const goal = document.getElementById('authGoal').value;
@@ -656,8 +659,14 @@ function login() {
     return;
   }
 
+  const phone = window.GuestAccess.normalizePhone(mobile);
+  if (!window.GuestAccess.isValidPhone(phone)) {
+    setAuthStatus('Please enter a valid 10-digit Indian mobile number', true);
+    return;
+  }
+
   const trial = window.GuestAccess.startTrial(email);
-  const extras = { ...trial, ...(schoolCode ? { schoolCode, plan: 'school' } : {}) };
+  const extras = { ...trial, phone, ...(schoolCode ? { schoolCode, plan: 'school' } : {}) };
   user = defaultUser(name, lang, goal, extras);
   saveUser();
   setAuthStatus('');
@@ -689,7 +698,7 @@ function renderDashboard() {
     banner.classList.remove('hidden');
   } else if (status.type === 'expired') {
     banner.className = 'mb-6 rounded-2xl px-5 py-4 text-sm font-medium bg-orange-50 border border-orange-200 text-orange-900';
-    banner.innerHTML = status.text + ' — <button onclick="showPremium()" class="underline font-semibold">Pay ₹99/month to continue</button>';
+    banner.innerHTML = status.text + ` — <button onclick="showPremium()" class="underline font-semibold">Pay ₹${window.Payments?.premiumPriceRupees?.() || '299'}/month to continue</button>`;
     banner.classList.remove('hidden');
   } else {
     banner.classList.add('hidden');
@@ -1020,13 +1029,16 @@ function checkGame(answer) {
 
 // ===== PREMIUM =====
 function showPremium() {
+  const price = window.Payments?.premiumPriceRupees?.() || '299';
+  document.getElementById('premiumPrice').textContent = price;
   const btn = document.getElementById('btnBuyPremium');
-  if (window.Payments?.hasCheckoutKey?.()) {
-    btn.textContent = 'Pay ₹99/month with Razorpay';
-  } else if (window.Payments?.hasPaymentLink?.()) {
-    btn.textContent = 'Pay ₹99 via Razorpay →';
+  btn.textContent = window.Payments?.payButtonLabel?.() || `Pay ₹${price}/month`;
+  if (!window.Payments?.isEnabled?.() && window.APP_CONFIG?.razorpayPaymentLink?.includes('razorpay.me/@')) {
+    document.getElementById('premiumModalDesc').textContent =
+      'Add Razorpay API keys to accept exactly ₹' + price + ' (fixed checkout). The profile link cannot lock the amount.';
   } else {
-    btn.textContent = 'Unlock — ₹99/month (Demo)';
+    document.getElementById('premiumModalDesc').textContent =
+      'Your 3-day free trial has ended. Pay ₹' + price + '/month to continue learning.';
   }
   document.getElementById('premiumModal').classList.remove('hidden');
 }
@@ -1037,9 +1049,7 @@ function buyPremium() {
   btn.textContent = 'Processing...';
   window.Payments.buyPremium(user, saveUser, (ok, mode) => {
     btn.disabled = false;
-    if (window.Payments?.hasCheckoutKey?.()) btn.textContent = 'Pay ₹99/month with Razorpay';
-    else if (window.Payments?.hasPaymentLink?.()) btn.textContent = 'Pay ₹99 via Razorpay →';
-    else btn.textContent = 'Unlock — ₹99/month (Demo)';
+    btn.textContent = window.Payments?.payButtonLabel?.() || 'Pay ₹299/month';
     closePremium();
     if (ok) {
       const msg = mode === 'paid' || mode === 'link'

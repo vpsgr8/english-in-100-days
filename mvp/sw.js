@@ -1,4 +1,4 @@
-const CACHE = 'ei100d-v3';
+const CACHE = 'ei100d-v4';
 const BASE = new URL('./', self.location).href;
 
 const ASSETS = [

@@ -2,20 +2,19 @@
  * App configuration — Razorpay keys for payments after free trial.
  */
 const APP_CONFIG = {
-  // Free trial length (days)
   trialDays: 3,
 
-  // Razorpay Checkout (optional — needs key from dashboard.razorpay.com)
+  // Required for fixed-amount checkout (dashboard.razorpay.com → API Keys)
   razorpayEnabled: true,
   razorpayKeyId: '',
 
-  // Razorpay Payment Link (works without API keys — your razorpay.me link)
-  razorpayPaymentLink: 'https://razorpay.me/@vishalpratapsingh601',
+  // Optional: fixed-amount Payment Link from Razorpay dashboard (NOT razorpay.me/@profile)
+  razorpayPaymentLink: '',
 
-  premiumAmount: 9900,
+  premiumAmount: 29900,
   premiumCurrency: 'INR',
   premiumPlanName: 'English in 100 Days',
-  premiumDescription: 'Continue learning after your 3-day free trial',
+  premiumDescription: 'Monthly subscription — continue after 3-day free trial',
 
   basePath: (function () {
     if (typeof location === 'undefined') return '/';

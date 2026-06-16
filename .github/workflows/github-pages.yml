@@ -27,6 +27,7 @@ jobs:
           VITE_RAZORPAY_KEY_ID: ${{ secrets.VITE_RAZORPAY_KEY_ID }}
           VITE_RAZORPAY_PAYMENT_LINK: ${{ secrets.VITE_RAZORPAY_PAYMENT_LINK }}
           VITE_TRIAL_DAYS: ${{ secrets.VITE_TRIAL_DAYS }}
+          VITE_PREMIUM_AMOUNT: ${{ secrets.VITE_PREMIUM_AMOUNT }}
 
       - name: Add .nojekyll for GitHub Pages
         run: touch mvp/.nojekyll

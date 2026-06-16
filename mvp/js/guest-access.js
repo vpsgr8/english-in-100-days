@@ -8,6 +8,17 @@ const GuestAccess = (() => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(email || '').trim());
   }
 
+  function normalizePhone(mobile) {
+    const digits = String(mobile || '').replace(/\D/g, '');
+    if (digits.length === 12 && digits.startsWith('91')) return digits.slice(2);
+    if (digits.length === 11 && digits.startsWith('0')) return digits.slice(1);
+    return digits;
+  }
+
+  function isValidPhone(phone) {
+    return /^[6-9]\d{9}$/.test(String(phone || ''));
+  }
+
   function startTrial(email) {
     const started = new Date();
     const ends = new Date(started.getTime() + trialDays() * 86400000);
@@ -62,6 +73,8 @@ const GuestAccess = (() => {
   return {
     trialDays,
     isValidEmail,
+    isValidPhone,
+    normalizePhone,
     startTrial,
     isPaid,
     isTrialActive,
