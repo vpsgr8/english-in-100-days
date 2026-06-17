@@ -79,6 +79,7 @@
         <button onclick="document.getElementById('features').scrollIntoView({behavior:'smooth'})" class="bg-white/10 hover:bg-white/20 border border-white/30 px-8 py-3 rounded-xl">See Features</button>
       </div>
       <nav class="flex flex-wrap justify-center gap-4 mt-8 text-sm text-brand-200">
+        <button type="button" onclick="showView('products')" class="hover:text-white">Products</button>
         <button type="button" onclick="showView('about')" class="hover:text-white">About</button>
         <button type="button" onclick="showView('blog')" class="hover:text-white">Blog</button>
         <button type="button" onclick="showView('contact')" class="hover:text-white">Contact</button>
@@ -499,6 +500,17 @@
   </div>
 </div>
 
+<!-- PRODUCTS -->
+<div id="view-products" class="view">
+  <div class="max-w-3xl mx-auto px-4 py-12">
+    <button onclick="showView('landing')" class="text-brand-600 text-sm mb-6">← Home</button>
+    <h1 class="text-3xl font-bold mb-2">Our Products</h1>
+    <p class="text-slate-500 mb-8">Practical tools by <strong>MarketMind Labs</strong> — built for India</p>
+    <div id="productsList"></div>
+    <div id="productsFooter" class="mt-10"></div>
+  </div>
+</div>
+
 <!-- ABOUT -->
 <div id="view-about" class="view">
   <div class="max-w-3xl mx-auto px-4 py-12">
@@ -506,13 +518,15 @@
     <h1 class="text-3xl font-bold mb-2">About MarketMind Labs</h1>
     <p class="text-slate-500 mb-8">Building practical learning products for India</p>
     <div class="bg-white border rounded-2xl p-8 space-y-4 text-slate-700 leading-relaxed">
-      <p><strong>MarketMind Labs</strong> creates simple, effective education tools for Indian learners. Our flagship product — <strong>English in 100 Days</strong> — helps you speak English confidently with just 5 minutes of daily practice.</p>
+      <p><strong>MarketMind Labs</strong> creates simple, effective tools for Indian learners and professionals — from spoken English to free online utilities and trading analysis.</p>
+      <p>Our flagship learning product — <strong>English in 100 Days</strong> — helps you speak English confidently with just 5 minutes of daily practice. We also build <strong>WorkPilot Tools</strong> (67+ browser-based utilities) and <strong>LogicTrade</strong> (probability-based market analysis).</p>
       <p>We believe grammar comes <em>after</em> listening and speaking, not before. That is why our app uses real conversations, Hindi-to-English support, AI speaking scores, and job interview scenarios.</p>
       <p>Whether you are preparing for a job, studying for exams, or learning for daily life, we are here to make English feel achievable — not overwhelming.</p>
-      <p class="text-sm text-slate-500">Based in India · <a href="blog.html" class="text-brand-600 hover:underline">Blog</a> · <a href="contact.html" class="text-brand-600 hover:underline">Contact</a></p>
+      <p class="text-sm text-slate-500">Based in India · <button type="button" onclick="showView('products')" class="text-brand-600 hover:underline">Our products</button> · <a href="blog.html" class="text-brand-600 hover:underline">Blog</a> · <a href="contact.html" class="text-brand-600 hover:underline">Contact</a></p>
     </div>
     <div class="mt-8 flex flex-wrap gap-3">
       <button onclick="showView('auth')" class="bg-brand-600 text-white px-6 py-3 rounded-xl font-semibold">Start Free Trial</button>
+      <button onclick="showView('products')" class="border px-6 py-3 rounded-xl font-semibold">Our Products</button>
       <button onclick="showView('blog')" class="border px-6 py-3 rounded-xl font-semibold">English Blog</button>
       <button onclick="showView('contact')" class="border px-6 py-3 rounded-xl font-semibold">Contact</button>
     </div>
@@ -530,6 +544,10 @@
       <div>
         <p class="text-sm font-medium text-slate-500">Email</p>
         <a id="contactEmailLink" href="mailto:mml.products26@gmail.com" class="text-xl text-brand-600 font-semibold hover:underline">mml.products26@gmail.com</a>
+      </div>
+      <div>
+        <p class="text-sm font-medium text-slate-500">All products</p>
+        <p class="text-slate-700"><button type="button" onclick="showView('products')" class="text-brand-600 hover:underline">English in 100 Days · WorkPilot Tools · LogicTrade</button></p>
       </div>
       <div>
         <p class="text-sm font-medium text-slate-500">Product</p>
@@ -593,6 +611,7 @@
 <script src="js/amazon-affiliate.js"></script>
 <script src="js/seo.js"></script>
 <script src="js/blog-content.js"></script>
+<script src="js/products-content.js"></script>
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script src="js/razorpay-pay.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
@@ -695,12 +714,12 @@ function requireLearningAccess() {
 }
 
 const LEARNING_VIEWS = ['lesson', 'speaking', 'scenarios', 'games', 'buddy', 'chat'];
-const PUBLIC_VIEWS = ['landing', 'about', 'contact', 'blog', 'blog-post', 'auth'];
+const PUBLIC_VIEWS = ['landing', 'about', 'contact', 'blog', 'blog-post', 'products', 'auth'];
 let currentBlogSlug = '';
 
 function renderSiteFooters() {
   const html = window.SiteSEO?.renderSiteFooter?.() || '';
-  ['landingFooter', 'aboutFooter', 'contactFooter', 'blogFooter', 'blogPostFooter'].forEach((id) => {
+  ['landingFooter', 'aboutFooter', 'contactFooter', 'blogFooter', 'blogPostFooter', 'productsFooter'].forEach((id) => {
     const el = document.getElementById(id);
     if (el) el.innerHTML = html;
   });
@@ -742,11 +761,14 @@ function showView(id, opts = {}) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById('view-' + id).classList.add('active');
   const nav = document.getElementById('mainNav');
-  if (['landing','auth','about','contact','blog','blog-post'].includes(id)) { nav.classList.add('hidden'); }
+  if (['landing','auth','about','contact','blog','blog-post','products'].includes(id)) { nav.classList.add('hidden'); }
   else { nav.classList.remove('hidden'); updateNav(); }
 
   if (id === 'blog') {
     document.getElementById('blogList').innerHTML = window.BlogContent?.renderList?.() || '';
+  }
+  if (id === 'products') {
+    document.getElementById('productsList').innerHTML = window.ProductsContent?.renderPage?.() || '';
   }
   if (id === 'dashboard') renderDashboard();
 

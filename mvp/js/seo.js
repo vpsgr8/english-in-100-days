@@ -33,6 +33,11 @@ const SiteSEO = (() => {
       description: 'Free articles on spoken English, Hindi to English, job interviews, and daily practice habits for Indian learners.',
       keywords: 'english learning blog, spoken english tips india, hindi to english blog'
     },
+    products: {
+      title: 'Our Products — MarketMind Labs',
+      description: 'Explore MarketMind Labs products: English in 100 Days, WorkPilot Tools (67+ free online tools), and LogicTrade (trading analysis for India).',
+      keywords: 'MarketMind Labs products, workpilottools, logictrade, englishlearner.store'
+    },
     auth: {
       title: 'Start Free Trial — English in 100 Days',
       description: 'Sign up with email and mobile. 3-day free trial, then continue learning English for ₹299/month.',
@@ -102,6 +107,7 @@ const SiteSEO = (() => {
             <div>
               <p class="font-semibold text-slate-700 mb-2">Company</p>
               <ul class="space-y-1 text-slate-600">
+                <li><a href="products.html" class="hover:text-brand-600">Our Products</a></li>
                 <li><a href="about.html" class="hover:text-brand-600">About</a></li>
                 <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
               </ul>
@@ -112,7 +118,7 @@ const SiteSEO = (() => {
               <p class="text-slate-500 text-xs mt-2">${company}</p>
             </div>
           </div>
-          <p class="text-center text-xs text-slate-400">© 2026 ${company} • English in 100 Days • <a href="index.html" class="hover:text-brand-600">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+          <p class="text-center text-xs text-slate-400">© 2026 ${company} • <a href="index.html" class="hover:text-brand-600">Home</a> · <a href="products.html">Products</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
           <div id="amazonFooterNote"></div>
         </div>
       </footer>`;
@@ -129,7 +135,7 @@ const SiteSEO = (() => {
       name: cfg().companyName || 'MarketMind Labs',
       url: siteUrl(),
       email: cfg().contactEmail || 'mml.products26@gmail.com',
-      description: 'EdTech company building English in 100 Days for Indian learners.'
+      description: 'EdTech and productivity company building English in 100 Days, WorkPilot Tools, and LogicTrade for Indian users.'
     });
     document.head.appendChild(script);
   }
@@ -157,6 +163,7 @@ const SiteSEO = (() => {
             <div>
               <p class="font-semibold text-slate-700 mb-2">Company</p>
               <ul class="space-y-1 text-slate-600">
+                <li><a href="products.html" class="hover:text-brand-600">Our Products</a></li>
                 <li><a href="about.html" class="hover:text-brand-600">About</a></li>
                 <li><a href="contact.html" class="hover:text-brand-600">Contact</a></li>
               </ul>
@@ -167,7 +174,7 @@ const SiteSEO = (() => {
               <p class="text-slate-500 text-xs mt-2">${company}</p>
             </div>
           </div>
-          <p class="text-center text-xs text-slate-400">© 2026 ${company} • English in 100 Days • <a href="index.html" class="hover:text-brand-600">Home</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+          <p class="text-center text-xs text-slate-400">© 2026 ${company} • <a href="index.html" class="hover:text-brand-600">Home</a> · <a href="products.html">Products</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
         </div>
       </footer>`;
   }
