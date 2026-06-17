@@ -27,7 +27,7 @@ const APP_CONFIG = {
 
   companyName: 'MarketMind Labs',
   contactEmail: 'mml.products26@gmail.com',
-  siteUrl: 'https://vpsgr8.github.io/',
+  siteUrl: 'https://englishlearner.store/',
 
   basePath: (function () {
     if (typeof location === 'undefined') return '/';

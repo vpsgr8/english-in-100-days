@@ -3,14 +3,14 @@
 AdSense **does not accept** GitHub project URLs like:
 
 ```
-https://vpsgr8.github.io/english-in-100-days/   ❌ rejected
+https://englishlearner.store/english-in-100-days/   ❌ rejected
 ```
 
 Google requires a **top-level site URL**, e.g. a custom domain or your **user** GitHub Pages root:
 
 ```
 https://englishin100days.in          ✅ custom domain (recommended)
-https://vpsgr8.github.io             ✅ only if the app is deployed at repo root
+https://englishlearner.store             ✅ custom domain (live)
 ```
 
 ---
@@ -33,7 +33,7 @@ At your domain registrar, add:
 | `A` | `@` | `185.199.109.153` |
 | `A` | `@` | `185.199.110.153` |
 | `A` | `@` | `185.199.111.153` |
-| `CNAME` | `www` | `vpsgr8.github.io` |
+| `CNAME` | `www` | `vpsgr8.github.io` (optional) |
 
 ### 3. Tell GitHub Pages
 
@@ -78,7 +78,7 @@ Either push the same `mvp/` workflow to that repo, or mirror `gh-pages` branch f
 Your live URL becomes:
 
 ```
-https://vpsgr8.github.io/
+https://englishlearner.store/
 ```
 
 (not `/english-in-100-days/`)

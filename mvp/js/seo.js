@@ -3,7 +3,7 @@
  */
 const SiteSEO = (() => {
   const cfg = () => window.APP_CONFIG || {};
-  const siteUrl = () => (cfg().siteUrl || 'https://vpsgr8.github.io/').replace(/\/?$/, '/');
+  const siteUrl = () => (cfg().siteUrl || 'https://englishlearner.store/').replace(/\/?$/, '/');
 
   const DEFAULT_KEYWORDS = [
     'learn english', 'spoken english', 'english for indians', 'hindi to english',
