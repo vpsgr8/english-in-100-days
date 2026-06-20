@@ -28,6 +28,10 @@ jobs:
       - name: Add .nojekyll
         run: touch mvp/.nojekyll
 
+      - name: Verify ads.txt before deploy
+        run: |
+          grep -q 'pub-5121623665404680' mvp/ads.txt || { echo 'ads.txt missing publisher ID'; exit 1; }
+
       - name: Deploy to vpsgr8.github.io (main)
         uses: peaceiris/actions-gh-pages@v4
         with:

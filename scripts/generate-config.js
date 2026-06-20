@@ -15,7 +15,7 @@ if (fs.existsSync(envPath)) {
 const razorpayKey = process.env.VITE_RAZORPAY_KEY_ID || '';
 const paymentLink = process.env.VITE_RAZORPAY_PAYMENT_LINK || '';
 const premiumAmount = Number(process.env.VITE_PREMIUM_AMOUNT) || 29900;
-const adsenseClient = process.env.VITE_ADSENSE_CLIENT_ID || '';
+const adsenseClient = process.env.VITE_ADSENSE_CLIENT_ID || 'ca-pub-5121623665404680';
 const adsenseSlot = process.env.VITE_ADSENSE_BANNER_SLOT || '';
 
 const out = `// AUTO-GENERATED — do not edit. Run: node scripts/generate-config.js
@@ -38,9 +38,9 @@ fs.writeFileSync(outPath, out);
 const adsTxtPath = path.join(__dirname, '../mvp/ads.txt');
 if (/^ca-pub-\d+$/i.test(adsenseClient)) {
   const pub = adsenseClient.replace(/^ca-pub-/i, 'pub-');
-  fs.writeFileSync(adsTxtPath, `google.com, ${pub}, DIRECT, f08c47fec0942fa0\n`);
+  fs.writeFileSync(adsTxtPath, `google.com, ${pub}, DIRECT, f08c47fec0942fa0\n`, 'utf8');
 } else {
-  fs.writeFileSync(adsTxtPath, '# Set VITE_ADSENSE_CLIENT_ID and redeploy to generate ads.txt\n');
+  console.warn('⚠️  Invalid VITE_ADSENSE_CLIENT_ID — keeping existing ads.txt');
 }
 
 const notes = [];
