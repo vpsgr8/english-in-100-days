@@ -99,6 +99,7 @@ const SiteSEO = (() => {
               <p class="font-semibold text-slate-700 mb-2">Learn</p>
               <ul class="space-y-1 text-slate-600">
                 <li><a href="index.html" class="hover:text-brand-600">Home</a></li>
+                <li><a href="free-lesson.html" class="hover:text-brand-600">Free Lesson</a></li>
                 <li><a href="index.html#auth" class="hover:text-brand-600">Free Trial</a></li>
                 <li><a href="blog.html" class="hover:text-brand-600">Blog</a></li>
                 <li><a href="admin.html" class="hover:text-brand-600">Schools</a></li>
@@ -118,7 +119,7 @@ const SiteSEO = (() => {
               <p class="text-slate-500 text-xs mt-2">${company}</p>
             </div>
           </div>
-          <p class="text-center text-xs text-slate-400">© 2026 ${company} • <a href="index.html" class="hover:text-brand-600">Home</a> · <a href="products.html">Products</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+          <p class="text-center text-xs text-slate-400">© 2026 ${company} • <a href="index.html" class="hover:text-brand-600">Home</a> · <a href="free-lesson.html">Free Lesson</a> · <a href="blog.html">Blog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
           <div id="amazonFooterNote"></div>
         </div>
       </footer>`;
@@ -155,6 +156,7 @@ const SiteSEO = (() => {
               <p class="font-semibold text-slate-700 mb-2">Learn</p>
               <ul class="space-y-1 text-slate-600">
                 <li><a href="index.html" class="hover:text-brand-600">Home</a></li>
+                <li><a href="free-lesson.html" class="hover:text-brand-600">Free Lesson</a></li>
                 <li><a href="index.html#auth" class="hover:text-brand-600">Free Trial</a></li>
                 <li><a href="blog.html" class="hover:text-brand-600">Blog</a></li>
                 <li><a href="admin.html" class="hover:text-brand-600">Schools</a></li>
@@ -174,7 +176,7 @@ const SiteSEO = (() => {
               <p class="text-slate-500 text-xs mt-2">${company}</p>
             </div>
           </div>
-          <p class="text-center text-xs text-slate-400">© 2026 ${company} • <a href="index.html" class="hover:text-brand-600">Home</a> · <a href="products.html">Products</a> · <a href="about.html">About</a> · <a href="blog.html">Blog</a> · <a href="contact.html">Contact</a></p>
+          <p class="text-center text-xs text-slate-400">© 2026 ${company} • <a href="index.html" class="hover:text-brand-600">Home</a> · <a href="free-lesson.html">Free Lesson</a> · <a href="blog.html">Blog</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms</a> · <a href="contact.html">Contact</a></p>
         </div>
       </footer>`;
   }

@@ -1,4 +1,4 @@
-const CACHE = 'ei100d-v9';
+const CACHE = 'ei100d-v10';
 const BASE = new URL('./', self.location).href;
 
 const ASSETS = [
@@ -6,6 +6,9 @@ const ASSETS = [
   'about.html',
   'contact.html',
   'products.html',
+  'privacy.html',
+  'terms.html',
+  'free-lesson.html',
   'blog.html',
   'admin.html',
   'lessons.json',

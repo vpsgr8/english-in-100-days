@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://englishlearner.store/</loc><priority>1.0</priority><changefreq>weekly</changefreq></url>
+  <url><loc>https://englishlearner.store/free-lesson.html</loc><priority>0.9</priority></url>
   <url><loc>https://englishlearner.store/products.html</loc><priority>0.8</priority></url>
   <url><loc>https://englishlearner.store/about.html</loc><priority>0.8</priority></url>
   <url><loc>https://englishlearner.store/contact.html</loc><priority>0.8</priority></url>
+  <url><loc>https://englishlearner.store/privacy.html</loc><priority>0.5</priority></url>
+  <url><loc>https://englishlearner.store/terms.html</loc><priority>0.5</priority></url>
   <url><loc>https://englishlearner.store/blog.html</loc><priority>0.9</priority><changefreq>weekly</changefreq></url>
   <url><loc>https://englishlearner.store/blog/learn-spoken-english-100-days.html</loc><priority>0.7</priority></url>
   <url><loc>https://englishlearner.store/blog/hindi-to-english-tips.html</loc><priority>0.7</priority></url>
   <url><loc>https://englishlearner.store/blog/job-interview-english-india.html</loc><priority>0.7</priority></url>
   <url><loc>https://englishlearner.store/blog/five-minute-english-habit.html</loc><priority>0.7</priority></url>
   <url><loc>https://englishlearner.store/blog/common-english-mistakes-indians.html</loc><priority>0.7</priority></url>
+  <url><loc>https://englishlearner.store/blog/english-for-market-shopping.html</loc><priority>0.7</priority></url>
+  <url><loc>https://englishlearner.store/blog/english-phrases-for-office-india.html</loc><priority>0.7</priority></url>
+  <url><loc>https://englishlearner.store/blog/introduce-yourself-english-hindi.html</loc><priority>0.7</priority></url>
+  <url><loc>https://englishlearner.store/blog/seven-day-english-practice-plan.html</loc><priority>0.7</priority></url>
+  <url><loc>https://englishlearner.store/blog/daily-english-conversation-topics.html</loc><priority>0.7</priority></url>
   <url><loc>https://englishlearner.store/admin.html</loc><priority>0.5</priority></url>
 </urlset>

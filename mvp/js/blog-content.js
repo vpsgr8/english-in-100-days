@@ -87,6 +87,85 @@ const BlogContent = (() => {
           <li>❌ Fear of speaking → ✅ Speak daily, mistakes are normal</li>
         </ul>
         <p class="mt-6"><a href="index.html" class="text-brand-600 font-semibold hover:underline">Learn correctly from Day 1</a> · <a href="blog.html" class="text-brand-600 hover:underline">More articles</a></p>`
+    },
+    {
+      slug: 'english-for-market-shopping',
+      title: 'English for Market and Shopping in India',
+      excerpt: 'Essential phrases, prices, bargaining politely, and vegetable names — for sabzi mandi and local shops.',
+      date: '2026-06-18',
+      keywords: 'english for market, shopping english india, sabzi mandi english',
+      body: `<p>Whether you shop at a sabzi mandi or a supermarket, these English phrases help you sound natural. Practice aloud — reading silently will not build speaking confidence.</p>
+        <h3 class="font-bold text-lg mt-6 mb-2">Asking prices</h3>
+        <ul class="list-disc pl-5 space-y-2 text-slate-600"><li>What is the price of tomatoes?</li><li>How much for one kilo?</li><li>Is this fresh?</li><li>Can you give a little discount?</li></ul>
+        <h3 class="font-bold text-lg mt-6 mb-2">Buying and paying</h3>
+        <ul class="list-disc pl-5 space-y-2 text-slate-600"><li>I would like half a kilo, please.</li><li>That is too expensive. Do you have something cheaper?</li><li>I will take two kilos.</li><li>Do you accept UPI?</li></ul>
+        <p class="mt-6">Try our <a href="free-lesson.html" class="text-brand-600 font-semibold hover:underline">free Day 1 market lesson</a> with vocabulary and a full conversation.</p>`
+    },
+    {
+      slug: 'english-phrases-for-office-india',
+      title: '50 English Phrases for Office Life in India',
+      excerpt: 'Emails, meetings, reporting to managers, and polite requests — practical corporate English.',
+      date: '2026-06-17',
+      keywords: 'office english india, corporate english phrases, workplace english',
+      body: `<p>Office English in India is not about fancy vocabulary — it is about clear, polite phrases you use every day. Learn these in groups and practice one group per day.</p>
+        <h3 class="font-bold text-lg mt-6 mb-2">Starting work &amp; email</h3>
+        <ul class="list-disc pl-5 space-y-1 text-slate-600 text-sm"><li>Good morning, team. · I am working on the report. · Please find the attachment. · Could you review this by EOD?</li></ul>
+        <h3 class="font-bold text-lg mt-6 mb-2">Meetings</h3>
+        <ul class="list-disc pl-5 space-y-1 text-slate-600 text-sm"><li>Can we schedule a quick call? · I agree with your point. · Let me share my screen. · Can you repeat that, please?</li></ul>
+        <h3 class="font-bold text-lg mt-6 mb-2">With your manager</h3>
+        <ul class="list-disc pl-5 space-y-1 text-slate-600 text-sm"><li>I have completed the task. · I need your guidance on this. · I will update you by tomorrow. · Thank you for the feedback.</li></ul>
+        <p class="mt-6"><a href="blog/job-interview-english-india.html" class="text-brand-600 hover:underline">Interview English guide</a> · <a href="index.html#auth" class="text-brand-600 font-semibold hover:underline">Practice in the app</a></p>`
+    },
+    {
+      slug: 'introduce-yourself-english-hindi',
+      title: 'How to Introduce Yourself in English (with Hindi)',
+      excerpt: 'Templates for school, college, job, and social situations — with Hindi meaning line by line.',
+      date: '2026-06-16',
+      keywords: 'introduce yourself english, self introduction hindi english, my name is english',
+      body: `<p>A good self-introduction is short, clear, and confident. Here are templates you can adapt — with Hindi support for each line.</p>
+        <h3 class="font-bold text-lg mt-6 mb-2">Basic (any situation)</h3>
+        <blockquote class="border-l-4 border-brand-500 pl-4 italic">Hello. My name is [Name]. I am from [City]. Nice to meet you.</blockquote>
+        <p class="hindi text-sm text-slate-500">नमस्ते। मेरा नाम [नाम] है। मैं [शहर] से हूँ। आपसे मिलकर अच्छा लगा।</p>
+        <h3 class="font-bold text-lg mt-6 mb-2">Job interview</h3>
+        <p class="text-slate-600">Good morning. My name is [Name]. I completed [degree] from [college]. I am passionate about [field] and I am looking for an opportunity to grow.</p>
+        <p class="mt-6"><a href="free-lesson.html" class="text-brand-600 hover:underline">Free sample lesson</a> · <a href="blog/job-interview-english-india.html" class="text-brand-600 hover:underline">Full interview guide</a></p>`
+    },
+    {
+      slug: 'seven-day-english-practice-plan',
+      title: '7-Day English Practice Plan for Beginners',
+      excerpt: 'A free week-by-week schedule: listening, speaking, vocabulary, and real conversations before you commit to 100 days.',
+      date: '2026-06-15',
+      keywords: '7 day english plan, beginner english schedule india, english practice week',
+      body: `<p>Not ready for 100 days yet? Start with this 7-day plan. Each day takes about 15 minutes.</p>
+        <ol class="list-decimal pl-5 space-y-3 text-slate-600 mt-4">
+          <li><strong>Day 1:</strong> Market words — <a href="free-lesson.html" class="text-brand-600">free lesson</a></li>
+          <li><strong>Day 2:</strong> Greetings — Good morning, How are you, Thank you</li>
+          <li><strong>Day 3:</strong> Family — mother, father, brother, sister + sentences</li>
+          <li><strong>Day 4:</strong> Numbers 1–20 and phone numbers aloud</li>
+          <li><strong>Day 5:</strong> Directions — left, right, straight, near, far</li>
+          <li><strong>Day 6:</strong> Restaurant — menu, water, bill please</li>
+          <li><strong>Day 7:</strong> Review — record a 30-second self-introduction</li>
+        </ol>
+        <p class="mt-6"><a href="index.html#auth" class="text-brand-600 font-semibold hover:underline">Continue with the full 100-day app →</a></p>`
+    },
+    {
+      slug: 'daily-english-conversation-topics',
+      title: '15 Daily English Conversation Topics for Indian Learners',
+      excerpt: 'Talk about weather, traffic, food, work, and festivals — ideas so you never run out of things to say.',
+      date: '2026-06-14',
+      keywords: 'english conversation topics, daily english speaking topics india',
+      body: `<p>The fastest way to improve spoken English is to speak about real life every day. Pick one topic below and say 5 sentences aloud — no grammar book needed.</p>
+        <ul class="list-disc pl-5 space-y-2 text-slate-600 mt-4">
+          <li>Today's weather and what you wore</li>
+          <li>What you ate for breakfast and lunch</li>
+          <li>Traffic on your way to work or college</li>
+          <li>One movie or serial you watched</li>
+          <li>Plans for the weekend</li>
+          <li>A festival you celebrate and how</li>
+          <li>Your hometown and what you miss</li>
+          <li>One skill you want to learn this year</li>
+        </ul>
+        <p class="mt-6">Use <strong>English Buddy</strong> in our app to turn Hindi sentences into natural English. <a href="index.html#auth" class="text-brand-600 font-semibold hover:underline">Start free trial</a></p>`
     }
   ];
 
