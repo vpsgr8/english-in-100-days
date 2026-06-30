@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="google-adsense-account" content="ca-pub-5121623665404680">
+  <title>School Admin — English in 100 Days</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>body{font-family:Inter,sans-serif}</style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+
+<div id="loginView" class="min-h-screen flex items-center justify-center p-4">
+  <div class="bg-white w-full max-w-md p-8 rounded-2xl shadow-xl border">
+    <div class="text-center mb-6">
+      <span class="text-4xl">🏫</span>
+      <h1 class="text-2xl font-bold mt-2">School Admin Panel</h1>
+      <p class="text-slate-500 text-sm">English in 100 Days — B2B License</p>
+    </div>
+    <label class="block text-sm font-medium mb-1">Admin Email</label>
+    <input id="adminEmail" type="email" placeholder="admin@school.edu" class="w-full border rounded-xl px-4 py-3 mb-4">
+    <label class="block text-sm font-medium mb-1">Access Code</label>
+    <input id="adminCode" type="password" placeholder="Demo: SCHOOL2026" class="w-full border rounded-xl px-4 py-3 mb-6">
+    <button onclick="adminLogin()" class="w-full bg-brand-600 text-white font-semibold py-3 rounded-xl" style="background:#2563eb">Login →</button>
+    <p class="text-xs text-slate-400 text-center mt-4">Demo code: <code>SCHOOL2026</code></p>
+    <a href="index.html" class="block text-center text-sm text-slate-500 mt-4 hover:text-brand-600">← Back to app</a>
+  </div>
+</div>
+
+<div id="dashboardView" class="hidden">
+  <nav class="bg-white border-b sticky top-0 z-10">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="font-bold text-brand-700">🏫 <span id="schoolName">School Admin</span></div>
+      <button onclick="adminLogout()" class="text-sm text-red-500">Logout</button>
+    </div>
+  </nav>
+
+  <div class="max-w-6xl mx-auto px-4 py-8">
+    <!-- Stats -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      <div class="bg-white border rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-brand-600" id="statStudents">0</div>
+        <div class="text-xs text-slate-500">Active Students</div>
+      </div>
+      <div class="bg-white border rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-green-600" id="statAvgDay">1</div>
+        <div class="text-xs text-slate-500">Avg. Day Progress</div>
+      </div>
+      <div class="bg-white border rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-orange-600" id="statStreak">0</div>
+        <div class="text-xs text-slate-500">Avg. Streak</div>
+      </div>
+      <div class="bg-white border rounded-xl p-4 text-center">
+        <div class="text-2xl font-bold text-purple-600" id="statLicense">200</div>
+        <div class="text-xs text-slate-500">License Seats</div>
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6 mb-8">
+      <!-- Invite Code -->
+      <div class="bg-white border rounded-2xl p-6">
+        <h2 class="font-bold text-lg mb-4">Student Invite Code</h2>
+        <p class="text-sm text-slate-500 mb-3">Students enter this code during signup to join your school license.</p>
+        <div class="flex gap-2">
+          <input id="inviteCode" readonly class="flex-1 bg-brand-50 border border-brand-200 rounded-xl px-4 py-3 font-mono font-bold text-brand-700 text-lg">
+          <button onclick="copyInvite()" class="bg-brand-600 text-white px-4 rounded-xl font-medium" style="background:#2563eb">Copy</button>
+        </div>
+        <button onclick="regenerateCode()" class="mt-3 text-sm text-brand-600 hover:underline">Regenerate code</button>
+      </div>
+
+      <!-- License -->
+      <div class="bg-white border rounded-2xl p-6">
+        <h2 class="font-bold text-lg mb-4">Your License</h2>
+        <div class="space-y-2 text-sm">
+          <div class="flex justify-between"><span class="text-slate-500">Plan</span><span id="licensePlan" class="font-medium">Medium — 200 students</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Price</span><span class="font-medium">₹35,000/year</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Expires</span><span id="licenseExpiry" class="font-medium">June 2027</span></div>
+          <div class="flex justify-between"><span class="text-slate-500">Seats used</span><span id="seatsUsed" class="font-medium">0 / 200</span></div>
+        </div>
+        <a href="mailto:sales@englishin100days.in?subject=Upgrade%20School%20License" class="inline-block mt-4 text-sm bg-accent-500 text-white px-4 py-2 rounded-lg font-medium">Upgrade License →</a>
+      </div>
+    </div>
+
+    <!-- Add Student -->
+    <div class="bg-white border rounded-2xl p-6 mb-8">
+      <h2 class="font-bold text-lg mb-4">Add Student (Demo)</h2>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <input id="newStudentName" placeholder="Student name" class="flex-1 border rounded-xl px-4 py-3">
+        <input id="newStudentClass" placeholder="Class (e.g. 10A)" class="w-32 border rounded-xl px-4 py-3">
+        <button onclick="addStudent()" class="bg-green-600 text-white px-6 py-3 rounded-xl font-semibold">Add</button>
+      </div>
+    </div>
+
+    <!-- Student Table -->
+    <div class="bg-white border rounded-2xl overflow-hidden">
+      <div class="p-4 border-b flex justify-between items-center">
+        <h2 class="font-bold text-lg">Students</h2>
+        <button onclick="exportCSV()" class="text-sm text-brand-600 font-medium">Export CSV</button>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-sm">
+          <thead class="bg-slate-50 text-slate-500">
+            <tr>
+              <th class="text-left px-4 py-3">Name</th>
+              <th class="text-left px-4 py-3">Class</th>
+              <th class="text-left px-4 py-3">Day</th>
+              <th class="text-left px-4 py-3">Streak</th>
+              <th class="text-left px-4 py-3">XP</th>
+              <th class="text-left px-4 py-3"></th>
+            </tr>
+          </thead>
+          <tbody id="studentTable"></tbody>
+        </table>
+      </div>
+      <p id="emptyStudents" class="text-center text-slate-400 py-8 hidden">No students yet. Share the invite code!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+const ADMIN_KEY = 'ei100d_school_admin';
+const DEMO_CODE = 'SCHOOL2026';
+
+let school = null;
+
+function loadSchool() {
+  try { school = JSON.parse(localStorage.getItem(ADMIN_KEY)); } catch(e) { school = null; }
+  return school;
+}
+
+function saveSchool() {
+  localStorage.setItem(ADMIN_KEY, JSON.stringify(school));
+}
+
+function defaultSchool(email) {
+  const code = 'ENG' + Math.random().toString(36).slice(2, 8).toUpperCase();
+  return {
+    email,
+    name: email.split('@')[0].replace(/\./g, ' ').replace(/\b\w/g, c => c.toUpperCase()) + ' School',
+    inviteCode: code,
+    maxSeats: 200,
+    plan: 'medium',
+    expiresAt: '2027-06-15',
+    students: [
+      { id: '1', name: 'Priya Sharma', class: '10A', day: 24, streak: 12, xp: 1200 },
+      { id: '2', name: 'Rahul Verma', class: '10B', day: 18, streak: 8, xp: 900 },
+      { id: '3', name: 'Anita Singh', class: '9A', day: 31, streak: 15, xp: 1550 }
+    ]
+  };
+}
+
+function adminLogin() {
+  const email = document.getElementById('adminEmail').value.trim();
+  const code = document.getElementById('adminCode').value.trim();
+  if (!email) { alert('Enter admin email'); return; }
+  if (code !== DEMO_CODE) { alert('Invalid access code. Demo: SCHOOL2026'); return; }
+  school = loadSchool() || defaultSchool(email);
+  school.email = email;
+  saveSchool();
+  showDashboard();
+}
+
+function adminLogout() {
+  if (confirm('Logout?')) {
+    school = null;
+    document.getElementById('loginView').classList.remove('hidden');
+    document.getElementById('dashboardView').classList.add('hidden');
+  }
+}
+
+function showDashboard() {
+  document.getElementById('loginView').classList.add('hidden');
+  document.getElementById('dashboardView').classList.remove('hidden');
+  document.getElementById('schoolName').textContent = school.name;
+  document.getElementById('inviteCode').value = school.inviteCode;
+  document.getElementById('statLicense').textContent = school.maxSeats;
+  document.getElementById('licenseExpiry').textContent = new Date(school.expiresAt).toLocaleDateString('en-IN', { month: 'long', year: 'numeric' });
+  document.getElementById('seatsUsed').textContent = school.students.length + ' / ' + school.maxSeats;
+  renderStudents();
+  updateStats();
+}
+
+function updateStats() {
+  const s = school.students;
+  document.getElementById('statStudents').textContent = s.length;
+  if (!s.length) return;
+  const avgDay = Math.round(s.reduce((a, x) => a + x.day, 0) / s.length);
+  const avgStreak = Math.round(s.reduce((a, x) => a + x.streak, 0) / s.length);
+  document.getElementById('statAvgDay').textContent = avgDay;
+  document.getElementById('statStreak').textContent = avgStreak;
+}
+
+function renderStudents() {
+  const tbody = document.getElementById('studentTable');
+  const empty = document.getElementById('emptyStudents');
+  if (!school.students.length) {
+    tbody.innerHTML = '';
+    empty.classList.remove('hidden');
+    return;
+  }
+  empty.classList.add('hidden');
+  tbody.innerHTML = school.students.map(s => `
+    <tr class="border-t hover:bg-slate-50">
+      <td class="px-4 py-3 font-medium">${s.name}</td>
+      <td class="px-4 py-3">${s.class}</td>
+      <td class="px-4 py-3">Day ${s.day}</td>
+      <td class="px-4 py-3">🔥 ${s.streak}</td>
+      <td class="px-4 py-3">${s.xp} XP</td>
+      <td class="px-4 py-3"><button onclick="removeStudent('${s.id}')" class="text-red-400 hover:text-red-600 text-xs">Remove</button></td>
+    </tr>`).join('');
+}
+
+function addStudent() {
+  const name = document.getElementById('newStudentName').value.trim();
+  const cls = document.getElementById('newStudentClass').value.trim() || '—';
+  if (!name) return;
+  if (school.students.length >= school.maxSeats) { alert('License seat limit reached. Upgrade to add more.'); return; }
+  school.students.push({ id: Date.now().toString(), name, class: cls, day: 1, streak: 0, xp: 0 });
+  document.getElementById('newStudentName').value = '';
+  document.getElementById('newStudentClass').value = '';
+  saveSchool();
+  renderStudents();
+  updateStats();
+  document.getElementById('seatsUsed').textContent = school.students.length + ' / ' + school.maxSeats;
+}
+
+function removeStudent(id) {
+  school.students = school.students.filter(s => s.id !== id);
+  saveSchool();
+  renderStudents();
+  updateStats();
+  document.getElementById('seatsUsed').textContent = school.students.length + ' / ' + school.maxSeats;
+}
+
+function copyInvite() {
+  navigator.clipboard.writeText(school.inviteCode);
+  alert('Invite code copied: ' + school.inviteCode);
+}
+
+function regenerateCode() {
+  if (!confirm('Regenerate invite code? Old code will stop working.')) return;
+  school.inviteCode = 'ENG' + Math.random().toString(36).slice(2, 8).toUpperCase();
+  document.getElementById('inviteCode').value = school.inviteCode;
+  saveSchool();
+}
+
+function exportCSV() {
+  const rows = [['Name', 'Class', 'Day', 'Streak', 'XP']];
+  school.students.forEach(s => rows.push([s.name, s.class, s.day, s.streak, s.xp]));
+  const csv = rows.map(r => r.join(',')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'students-export.csv';
+  a.click();
+}
+
+if (loadSchool()) showDashboard();
+</script>
+</body>
+</html>
